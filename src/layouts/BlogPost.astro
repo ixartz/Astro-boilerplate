@@ -2,7 +2,7 @@
 import BaseLayout from '@/layouts/Base.astro';
 import { format } from 'date-fns';
 
-export interface BlogProps {
+export interface Props {
   content: {
     title: string;
     description: string;
@@ -10,7 +10,7 @@ export interface BlogProps {
   }
 }
 
-const { content } = Astro.props as BlogProps;
+const { content } = Astro.props as Props;
 ---
 
 <BaseLayout head={{ title: content.title, description: content.description }}>

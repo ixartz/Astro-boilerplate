@@ -1,9 +1,9 @@
 ---
 import BaseLayout from '@/layouts/Base.astro';
+import { getAllPostsSortedByDate } from '../../utils/Posts';
 
 export async function getStaticPaths({ paginate, rss }) {
-	const allPosts = await Astro.glob('./*.md');
-	const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+	const sortedPosts = await getAllPostsSortedByDate(Astro);
 
 	// Generate an RSS feed from this collection of posts.
 	// NOTE: This is disabled by default, since it requires `site` to be set in your "astro.config.mjs" file.

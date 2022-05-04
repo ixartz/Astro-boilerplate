@@ -8,7 +8,7 @@ export interface Props {
 	}
 }
 
-const { head: { title, description } } = Astro.props;
+const { head: { title, description } } = Astro.props as Props;
 ---
 
 <html lang="en">

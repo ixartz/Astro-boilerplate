@@ -1,8 +1,8 @@
 ---
 import BaseLayout from '@/layouts/Base.astro';
+import { getAllPostsSortedByDate } from '../utils/Posts';
 
-const allPosts = await Astro.glob('./posts/*.md');
-const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+const sortedPosts = await getAllPostsSortedByDate(Astro);
 const lastThreePosts = sortedPosts.slice(0, 3);
 
 const title = 'Homepage';
