@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@/layouts/Base.astro';
 import { sortByDate } from '@/utils/Posts';
-import type { IFrontmatter } from '../types/IFrontMatter';
+import type { IFrontmatter } from '@/types/IFrontMatter';
 
 const allPosts = await Astro.glob<IFrontmatter>('./posts/*.md');
 const sortedPosts = sortByDate(allPosts);

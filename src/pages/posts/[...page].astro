@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '@/layouts/Base.astro';
 import { sortByDate } from '@/utils/Posts';
-import { MarkdownInstance, Page } from 'astro';
 import type { IFrontmatter } from '@/types/IFrontMatter';
 
 export async function getStaticPaths({ paginate, rss }) {
@@ -26,7 +25,10 @@ export async function getStaticPaths({ paginate, rss }) {
 	return paginate(sortedPosts, { pageSize: 3 });
 }
 
-export interface Props {
+type Page<T> = import('astro').Page<T>;
+type MarkdownInstance<T> = import('astro').MarkdownInstance<T>;
+
+interface Props {
   page: Page<MarkdownInstance<IFrontmatter>>
 }
 
