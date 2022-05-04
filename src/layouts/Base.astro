@@ -18,6 +18,7 @@ const { head: { title, description } } = Astro.props as Props;
     <title>{title}</title>
 		<meta name="description" content={description} />
 
+		<link rel="alternate" type="application/rss+xml" href="/rss.xml" />
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	</head>
 	<body>
