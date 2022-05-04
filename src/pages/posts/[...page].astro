@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '@/layouts/Base.astro';
 import { sortByDate } from '@/utils/Posts';
-import type { IFrontmatter } from '@/types/IFrontMatter';
+import type { IFrontmatter, FrontmatterPage } from '@/types/IFrontmatter';
+import { Pagination } from '@/components/Pagination';
 
 export async function getStaticPaths({ paginate, rss }) {
 	const allPosts = await Astro.glob<IFrontmatter>('./*.md');
@@ -24,11 +25,8 @@ export async function getStaticPaths({ paginate, rss }) {
 	return paginate(sortedPosts, { pageSize: 3 });
 }
 
-type Page<T> = import('astro').Page<T>;
-type MarkdownInstance<T> = import('astro').MarkdownInstance<T>;
-
 interface Props {
-  page: Page<MarkdownInstance<IFrontmatter>>
+  page: FrontmatterPage
 }
 
 const { page } = Astro.props as Props;
@@ -38,4 +36,4 @@ const title = titleBase + titleSuffix;
 const description = 'First page description';
 ---
 
-<BaseLayout head={{ title, description }}>All posts <div>{page.data.map(elt => <div><a href={elt.url}>{elt.frontmatter.title}</a></div>)}</div></BaseLayout>
+<BaseLayout head={{ title, description }}>All posts <div>{page.data.map(elt => <div><a href={elt.url}>{elt.frontmatter.title}</a></div>)}</div> <Pagination page={page} /></BaseLayout>
