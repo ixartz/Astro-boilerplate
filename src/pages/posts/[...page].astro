@@ -1,9 +1,11 @@
 ---
 import BaseLayout from '@/layouts/Base.astro';
 import { sortByDate } from '@/utils/Posts';
+import { MarkdownInstance, Page } from 'astro';
+import type { IFrontmatter } from '@/types/IFrontMatter';
 
 export async function getStaticPaths({ paginate, rss }) {
-	const allPosts = await Astro.glob('./*.md');
+	const allPosts = await Astro.glob<IFrontmatter>('./*.md');
 	const sortedPosts = sortByDate(allPosts);
 
 	// Generate an RSS feed from this collection of posts.
@@ -24,7 +26,11 @@ export async function getStaticPaths({ paginate, rss }) {
 	return paginate(sortedPosts, { pageSize: 3 });
 }
 
-const { page } = Astro.props;
+export interface Props {
+  page: Page<MarkdownInstance<IFrontmatter>>
+}
+
+const { page } = Astro.props as Props;
 const titleSuffix = page.currentPage == 1 ? '' : ` | ${page.currentPage}`;
 const titleBase = `Homepage`;
 const title = titleBase + titleSuffix;
