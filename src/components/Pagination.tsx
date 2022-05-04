@@ -1,11 +1,14 @@
-import type { FrontmatterPage } from '@/types/IFrontMatter';
+import type { FrontmatterPage } from "@/types/IFrontMatter";
 
 type IPaginationProps = {
-  page: FrontmatterPage
+  page: FrontmatterPage;
 };
 
 const Pagination = (props: IPaginationProps) => (
-  <div>{props.page.currentPage}</div>
+  <div class="flex justify-between">
+    {props.page.url.prev && <a href={props.page.url.prev}>Newer Posts</a>}
+    {props.page.url.next && <a href={props.page.url.next}>Older Posts</a>}
+  </div>
 );
 
 export { Pagination };
