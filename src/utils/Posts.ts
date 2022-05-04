@@ -1,9 +1,9 @@
-import type { IFrontmatter } from '@/types/IFrontMatter';
-import type { AstroGlobal } from 'astro';
+import { MarkdownInstance } from "astro";
 
-export const getAllPostsSortedByDate = async (Astro: Readonly<AstroGlobal>) => {
-  const allPosts = await Astro.glob<IFrontmatter>('./*.md');
-	const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
-
-  return sortedPosts;
-}
+export const sortByDate = (posts: MarkdownInstance<Record<string, any>>[]) => {
+  return posts.sort(
+    (a, b) =>
+      new Date(b.frontmatter.publishDate).valueOf() -
+      new Date(a.frontmatter.publishDate).valueOf()
+  );
+};
