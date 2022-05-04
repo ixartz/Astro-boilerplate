@@ -2,7 +2,7 @@
 layout: '@/layouts/BlogPost.astro'
 title: 5th post
 description: First post description
-publishDate: 2020-02-11T00:00:00Z
+publishDate: 2020-02-05T00:00:00Z
 ---
 
 # title hello

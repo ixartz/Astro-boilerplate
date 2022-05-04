@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@/layouts/Base.astro';
+
+export async function getStaticPaths({ paginate, rss }) {
+	const allPosts = await Astro.glob('./*.md');
+	const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf());
+
+	// Generate an RSS feed from this collection of posts.
+	// NOTE: This is disabled by default, since it requires `site` to be set in your "astro.config.mjs" file.
+	//   rss({
+	//     title: 'Don’s Blog',
+	//     description: 'An example blog on Astro',
+	//     customData: `<language>en-us</language>`,
+	//     items: sortedPosts.map(item => ({
+	//       title: item.title,
+	//       description: item.description,
+	//       link: item.url,
+	//       pubDate: item.date,
+	//     })),
+	//   });
+
+	// Return a paginated collection of paths for all posts
+	return paginate(sortedPosts, { pageSize: 3 });
+}
+
+const { page } = Astro.props;
+const titleSuffix = page.currentPage == 1 ? '' : ` | ${page.currentPage}`;
+const titleBase = `Homepage`;
+const title = titleBase + titleSuffix;
+const description = 'First page description';
+---
+
+<BaseLayout head={{ title, description }}>All posts <div>{page.data.map(elt => <div><a href={elt.url}>{elt.frontmatter.title}</a></div>)}</div></BaseLayout>
