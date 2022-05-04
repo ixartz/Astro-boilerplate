@@ -5,6 +5,7 @@ import { format } from 'date-fns';
 export interface BlogProps {
   content: {
     title: string;
+    description: string;
     date: string;
   }
 }
@@ -12,7 +13,7 @@ export interface BlogProps {
 const { content } = Astro.props as BlogProps;
 ---
 
-<BaseLayout>
+<BaseLayout head={{ title: content.title, description: content.description }}>
   <h1>{content.title} by Auth</h1>
   <slot />
   <p>Written on: {format(new Date(content.date), 'LLL d, yyyy')}</p>

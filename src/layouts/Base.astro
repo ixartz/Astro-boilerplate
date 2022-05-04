@@ -1,12 +1,22 @@
 ---
 import { Logo } from '@/components/Logo';
+
+export interface Props {
+  head: {
+    title: string;
+		description: string;
+	}
+}
+
+const { head: { title, description } } = Astro.props;
 ---
 
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Page title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+		<meta name="description" content={description} />
 	</head>
 	<body>
 		<Logo />
