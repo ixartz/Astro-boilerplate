@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '@/layouts/Base.astro';
+
+let allPosts = await Astro.glob('./posts/*.md');
+allPosts = allPosts.sort((a, b) => new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()).slice(0, 3);
 ---
 
-<BaseLayout head={{ title: 'Homepage', description: 'First page description' }}>Homepage</BaseLayout>
+<BaseLayout head={{ title: 'Homepage', description: 'First page description' }}>Homepage <div>{allPosts.map(elt => <div><a href={elt.url}>{elt.frontmatter.title}</a></div>)}</div></BaseLayout>
