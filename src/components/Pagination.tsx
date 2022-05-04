@@ -5,7 +5,7 @@ type IPaginationProps = {
 };
 
 const Pagination = (props: IPaginationProps) => (
-  <div class="flex justify-between">
+  <div className="flex justify-between">
     {props.page.url.prev && <a href={props.page.url.prev}>Newer Posts</a>}
     {props.page.url.next && <a href={props.page.url.next}>Older Posts</a>}
   </div>
