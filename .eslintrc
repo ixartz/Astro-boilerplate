@@ -37,6 +37,25 @@
       "parserOptions": {
         "parser": "@typescript-eslint/parser"
       },
+      "rules": {
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never",
+            "astro": "never",
+            "": "never"
+          }
+        ],
+        "import/resolver": {
+          "typescript": {
+            "project": ["tsconfig.json"]
+          }
+        }
+      },
       "globals": {
         "Astro": "readonly"
       }
