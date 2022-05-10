@@ -5,7 +5,12 @@ import type { IFrontmatter, FrontmatterPage } from '@/types/IFrontmatter';
 import { Pagination } from '@/components/Pagination';
 import { AppConfig } from '@/utils/AppConfig';
 
-export async function getStaticPaths({ paginate, rss }) {
+type GetStaticPaths = {
+  paginate: any;
+  rss: any;
+}; // Overrides `GetStaticPathsOptions` types from Astro
+
+export async function getStaticPaths({ paginate, rss }: GetStaticPaths) {
   const allPosts = await Astro.glob<IFrontmatter>('./*.md');
   const sortedPosts = sortByDate(allPosts);
 
