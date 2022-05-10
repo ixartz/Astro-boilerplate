@@ -1,6 +1,6 @@
 {
-  "name": "@example/minimal",
-  "version": "0.0.1",
+  "name": "astro-boilerplate",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
