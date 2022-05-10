@@ -8,8 +8,20 @@ const allPosts = await Astro.glob<IFrontmatter>('./posts/*.md');
 const sortedPosts = sortByDate(allPosts);
 const lastThreePosts = sortedPosts.slice(0, 3);
 
-const title = AppConfig.title;
-const description = AppConfig.description;
+const { title } = AppConfig;
+const { description } = AppConfig;
 ---
 
-<BaseLayout head={{ title, description }}>Homepage <div><a href="/posts">See all pages</a><div>{lastThreePosts.map(elt => <div><a href={elt.url}>{elt.frontmatter.title}</a></div>)}</div></div></BaseLayout>
+<BaseLayout head={{ title, description }}>
+  Homepage
+  <div>
+    <a href='/posts'>See all pages</a>
+    <div>
+      {lastThreePosts.map((elt) => (
+        <div>
+          <a href={elt.url}>{elt.frontmatter.title}</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

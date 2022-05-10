@@ -1,0 +1,45 @@
+{
+  // Configuration for JavaScript files
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "endOfLine": "auto"
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "plugins": ["@typescript-eslint", "react"],
+      "extends": [
+        "plugin:tailwindcss/recommended",
+        "airbnb-typescript",
+        "plugin:prettier/recommended"
+      ],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "rules": {
+        "import/prefer-default-export": "off" // Named export is easier to refactor automatically
+      }
+    },
+    // Configuration for Astro
+    {
+      "files": ["**/*.astro"],
+      "extends": [
+        "plugin:tailwindcss/recommended",
+        "plugin:prettier/recommended"
+      ],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser"
+      },
+      "globals": {
+        "Astro": "readonly"
+      }
+    }
+  ]
+}

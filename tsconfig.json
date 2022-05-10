@@ -12,9 +12,13 @@
     // Add type definitions for our Vite runtime.
     "types": ["vite/client"],
 
+    "jsx": "react-jsx",
+
+    "skipLibCheck": true,
+
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./src/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"]

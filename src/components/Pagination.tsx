@@ -1,4 +1,4 @@
-import type { FrontmatterPage } from "@/types/IFrontMatter";
+import type { FrontmatterPage } from '@/types/IFrontMatter';
 
 type IPaginationProps = {
   page: FrontmatterPage;

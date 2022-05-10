@@ -6,35 +6,45 @@ import { Pagination } from '@/components/Pagination';
 import { AppConfig } from '@/utils/AppConfig';
 
 export async function getStaticPaths({ paginate, rss }) {
-	const allPosts = await Astro.glob<IFrontmatter>('./*.md');
-	const sortedPosts = sortByDate(allPosts);
+  const allPosts = await Astro.glob<IFrontmatter>('./*.md');
+  const sortedPosts = sortByDate(allPosts);
 
-	// Generate an RSS feed from this collection of posts.
-	rss({
-		title: AppConfig.title,
-		description: AppConfig.description,
-		customData: `<language>${AppConfig.locale_region}</language>`,
-		items: sortedPosts.map(elt => ({
-			title: elt.frontmatter.title,
-			description: elt.frontmatter.description,
-			link: elt.url,
-			pubDate: elt.frontmatter.publishDate,
-		})),
-	});
+  // Generate an RSS feed from this collection of posts.
+  rss({
+    title: AppConfig.title,
+    description: AppConfig.description,
+    customData: `<language>${AppConfig.locale_region}</language>`,
+    items: sortedPosts.map((elt) => ({
+      title: elt.frontmatter.title,
+      description: elt.frontmatter.description,
+      link: elt.url,
+      pubDate: elt.frontmatter.publishDate,
+    })),
+  });
 
-	// Return a paginated collection of paths for all posts
-	return paginate(sortedPosts, { pageSize: 3 });
+  // Return a paginated collection of paths for all posts
+  return paginate(sortedPosts, { pageSize: 3 });
 }
 
 interface Props {
-  page: FrontmatterPage
+  page: FrontmatterPage;
 }
 
 const { page } = Astro.props as Props;
 const titleSuffix = ` - ${AppConfig.site_name}`;
 const titleBase = `Blog page ${page.currentPage}`;
 const title = titleBase + titleSuffix;
-const description = 'Pagination example built with Astro styled with Tailwind CSS.';
+const description =
+  'Pagination example built with Astro styled with Tailwind CSS.';
 ---
 
-<BaseLayout head={{ title, description }}>All posts <div>{page.data.map(elt => <div><a href={elt.url}>{elt.frontmatter.title}</a></div>)}</div> <Pagination page={page} /></BaseLayout>
+<BaseLayout head={{ title, description }}
+  >All posts <div>
+    {page.data.map((elt) => (
+      <div>
+        <a href={elt.url}>{elt.frontmatter.title}</a>
+      </div>
+    ))}
+  </div>
+  <Pagination page={page} />
+</BaseLayout>
