@@ -2,13 +2,14 @@
 import BaseLayout from '@/layouts/Base.astro';
 import { sortByDate } from '@/utils/Posts';
 import type { IFrontmatter } from '@/types/IFrontmatter';
+import { AppConfig } from '@/utils/AppConfig';
 
 const allPosts = await Astro.glob<IFrontmatter>('./posts/*.md');
 const sortedPosts = sortByDate(allPosts);
 const lastThreePosts = sortedPosts.slice(0, 3);
 
-const title = 'Homepage';
-const description = 'First page description';
+const title = AppConfig.title;
+const description = AppConfig.description;
 ---
 
 <BaseLayout head={{ title, description }}>Homepage <div><a href="/posts">See all pages</a><div>{lastThreePosts.map(elt => <div><a href={elt.url}>{elt.frontmatter.title}</a></div>)}</div></div></BaseLayout>
