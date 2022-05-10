@@ -31,7 +31,7 @@ interface Props {
 }
 
 const { page } = Astro.props as Props;
-const titleSuffix = ` | ${AppConfig.site_name}`;
+const titleSuffix = ` - ${AppConfig.site_name}`;
 const titleBase = `Blog page ${page.currentPage}`;
 const title = titleBase + titleSuffix;
 const description = 'Pagination example built with Astro styled with Tailwind CSS.';

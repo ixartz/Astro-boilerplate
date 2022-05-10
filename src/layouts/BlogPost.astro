@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '@/layouts/Base.astro';
+import { AppConfig } from '@/utils/AppConfig';
 import { format } from 'date-fns';
 
 export interface Props {
@@ -11,9 +12,10 @@ export interface Props {
 }
 
 const { content } = Astro.props as Props;
+const title = content.title + ` - ${AppConfig.site_name}`;
 ---
 
-<BaseLayout head={{ title: content.title, description: content.description }}>
+<BaseLayout head={{ title, description: content.description }}>
   <h1>{content.title} by Auth</h1>
   <slot />
   <p>Written on: {format(new Date(content.publishDate), 'LLL d, yyyy')}</p>
