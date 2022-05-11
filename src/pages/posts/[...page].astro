@@ -1,9 +1,9 @@
 ---
-import BaseLayout from '@/layouts/Base.astro';
-import { sortByDate } from '@/utils/Posts';
-import type { IFrontmatter, FrontmatterPage } from '@/types/IFrontmatter';
 import { Pagination } from '@/components/Pagination';
+import BaseLayout from '@/layouts/Base.astro';
+import type { FrontmatterPage, IFrontmatter } from '@/types/IFrontmatter';
 import { AppConfig } from '@/utils/AppConfig';
+import { sortByDate } from '@/utils/Posts';
 
 type GetStaticPaths = {
   paginate: any;
