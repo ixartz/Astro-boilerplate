@@ -4,26 +4,28 @@ import { Logo } from '@/components/Logo';
 export interface Props {
   head: {
     title: string;
-		description: string;
-	}
+    description: string;
+  };
 }
 
-const { head: { title, description } } = Astro.props as Props;
+const {
+  head: { title, description },
+} = Astro.props as Props;
 ---
 
-<html lang="en">
-	<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
     <title>{title}</title>
-		<meta name="description" content={description} />
+    <meta name='description' content={description} />
 
-		<link rel="alternate" type="application/rss+xml" href="/rss.xml" />
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-	</head>
-	<body>
-		<Logo />
+    <link rel='alternate' type='application/rss+xml' href='/rss.xml' />
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+  </head>
+  <body>
+    <Logo />
 
-    <slot />
-	</body>
+    <slot></slot>
+  </body>
 </html>

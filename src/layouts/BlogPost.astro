@@ -1,22 +1,22 @@
 ---
-import BaseLayout from '@/layouts/Base.astro';
-import { AppConfig } from '@/utils/AppConfig';
 import { format } from 'date-fns';
+import BaseLayout from '@/layouts/Base';
+import { AppConfig } from '@/utils/AppConfig';
 
 export interface Props {
   content: {
     title: string;
     description: string;
     publishDate: string;
-  }
+  };
 }
 
 const { content } = Astro.props as Props;
-const title = content.title + ` - ${AppConfig.site_name}`;
+const title = `${content.title} - ${AppConfig.site_name}`;
 ---
 
 <BaseLayout head={{ title, description: content.description }}>
   <h1>{content.title} by Auth</h1>
-  <slot />
+  <slot></slot>
   <p>Written on: {format(new Date(content.publishDate), 'LLL d, yyyy')}</p>
 </BaseLayout>

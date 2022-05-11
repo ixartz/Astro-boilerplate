@@ -58,6 +58,51 @@
           { "argsIgnorePattern": "^_" }
         ]
       }
+    },
+    // Configuration for Astro
+    {
+      "files": ["**/*.astro"],
+      "plugins": [
+        "@typescript-eslint",
+        "react",
+        "unused-imports",
+        "tailwindcss",
+        "simple-import-sort"
+      ],
+      "extends": [
+        "plugin:tailwindcss/recommended",
+        "airbnb-typescript",
+        "plugin:prettier/recommended"
+      ],
+      "parser": "astro-eslint-parser",
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser",
+        "project": "./tsconfig.json"
+      },
+      "rules": {
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            "js": "never",
+            "jsx": "never",
+            "ts": "never",
+            "tsx": "never",
+            "astro": "never",
+            "": "never"
+          }
+        ],
+        "import/no-unresolved": [
+          "error",
+          {
+            "ignore": ["@/*"]
+          }
+        ],
+        "react/jsx-filename-extension": [1, { "extensions": [".astro"] }]
+      },
+      "globals": {
+        "Astro": "readonly"
+      }
     }
   ]
 }
