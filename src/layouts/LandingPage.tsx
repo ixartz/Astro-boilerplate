@@ -1,8 +1,9 @@
 import { Logo } from '@/components/Logo';
 import { NavMenu } from '@/components/NavMenu';
+import { Section } from '@/components/Section';
 
 const LandingPage = () => (
-  <div className="mx-auto flex max-w-screen-lg items-center justify-between px-3 py-5">
+  <Section>
     <Logo
       icon={
         <svg
@@ -25,7 +26,7 @@ const LandingPage = () => (
     />
 
     <NavMenu />
-  </div>
+  </Section>
 );
 
 export { LandingPage };
