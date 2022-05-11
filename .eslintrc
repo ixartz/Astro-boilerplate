@@ -26,7 +26,9 @@
             "singleQuote": true,
             "endOfLine": "auto"
           }
-        ]
+        ],
+        "import/no-extraneous-dependencies": "off", // mjs is only used by Astro for configuration, false positive
+        "import/no-unresolved": "off" // Also false positive with mjs file
       }
     },
     // Configuration for TypeScript files
