@@ -43,8 +43,9 @@ const description =
   'Pagination example built with Astro styled with Tailwind CSS.';
 ---
 
-<BaseLayout head={{ title, description }}
-  >All posts <div>
+<BaseLayout head={{ title, description }}>
+  All posts
+  <div>
     {page.data.map((elt) => (
       <div>
         <a href={elt.url}>{elt.frontmatter.title}</a>
