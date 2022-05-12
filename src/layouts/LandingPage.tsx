@@ -19,6 +19,11 @@ const LandingPage = () => (
         bibendum. Nunc non posuere consectetur, justo erat semper enim, non
         hendrerit dui odio id enim."
         img={{ src: projectWebDesign, alt: 'Project Web Design' }}
+        category={
+          <div className="rounded-md bg-lime-400 px-2 py-1 text-xs font-semibold text-lime-900">
+            Web Design
+          </div>
+        }
       />
       <Project
         name="Project 2"
@@ -26,6 +31,7 @@ const LandingPage = () => (
         bibendum. Nunc non posuere consectetur, justo erat semper enim, non
         hendrerit dui odio id enim."
         img={{ src: projectFire, alt: 'Project Fire' }}
+        category="Next.js"
       />
       <Project
         name="Project 3"
@@ -33,6 +39,7 @@ const LandingPage = () => (
         bibendum. Nunc non posuere consectetur, justo erat semper enim, non
         hendrerit dui odio id enim."
         img={{ src: projectMaps, alt: 'Project Maps' }}
+        category="Node.js"
       />
     </Section>
   </>

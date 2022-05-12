@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react';
+
 type IProjectProps = {
   img: {
     src: string;
@@ -5,6 +7,7 @@ type IProjectProps = {
   };
   name: string;
   description: string;
+  category: ReactNode;
 };
 
 const Project = (props: IProjectProps) => (
@@ -14,7 +17,11 @@ const Project = (props: IProjectProps) => (
     </div>
 
     <div>
-      <div className="text-xl font-semibold">{props.name}</div>
+      <div className="flex items-center">
+        <div className="text-xl font-semibold">{props.name}</div>
+
+        <div className="ml-3">{props.category}</div>
+      </div>
 
       <p className="mt-3 text-gray-400">{props.description}</p>
     </div>
