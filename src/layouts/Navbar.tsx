@@ -1,6 +1,7 @@
 import { Logo } from '@/components/Logo';
 import { NavbarTwoColumns } from '@/components/NavbarTwoColumns';
 import { NavMenu } from '@/components/NavMenu';
+import { NavMenuItem } from '@/components/NavMenuItem';
 import { Section } from '@/components/Section';
 
 const Navbar = () => (
@@ -27,7 +28,11 @@ const Navbar = () => (
         name="Ixartz's Blog"
       />
 
-      <NavMenu />
+      <NavMenu>
+        <NavMenuItem href="/">About</NavMenuItem>
+        <NavMenuItem href="/">Blogs</NavMenuItem>
+        <NavMenuItem href="/">Newsletter</NavMenuItem>
+      </NavMenu>
     </NavbarTwoColumns>
   </Section>
 );

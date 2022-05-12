@@ -1,12 +1,12 @@
-import { NavMenuItem } from './NavMenuItem';
+import type { ReactNode } from 'react';
 
-const NavMenu = () => (
+type INavMenuProps = {
+  children: ReactNode;
+};
+
+const NavMenu = (props: INavMenuProps) => (
   <nav>
-    <ul className="flex gap-x-3 font-medium text-gray-200">
-      <NavMenuItem href="/">About</NavMenuItem>
-      <NavMenuItem href="/">Blogs</NavMenuItem>
-      <NavMenuItem href="/">Newsletter</NavMenuItem>
-    </ul>
+    <ul className="flex gap-x-3 font-medium text-gray-200">{props.children}</ul>
   </nav>
 );
 
