@@ -2,7 +2,6 @@ import type { MarkdownInstance } from 'astro';
 import { format } from 'date-fns';
 
 import { Section } from '@/components/Section';
-import imagePost from '@/images/image-post.jpeg';
 import type { IFrontmatter } from '@/types/IFrontmatter';
 
 type IBlogGalleryPosts = {
@@ -28,7 +27,7 @@ const BlogGallery = (props: IBlogGalleryPosts) => (
             <div className="aspect-w-3 aspect-h-2">
               <img
                 className="h-full w-full object-cover object-center"
-                src={imagePost}
+                src={elt.frontmatter.img}
                 alt="alt text"
               />
             </div>

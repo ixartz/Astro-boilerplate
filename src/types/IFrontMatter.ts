@@ -2,6 +2,7 @@ export interface IFrontmatter {
   title: string;
   description: string;
   publishDate: string;
+  img: string;
 }
 
 // Workaround to import Astro type. Otherwise, it'll have some compilation errors
