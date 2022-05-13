@@ -18,15 +18,5 @@ const { description } = AppConfig;
 <BaseLayout head={{ title, description }}>
   <Hero />
   <ProjectList />
-  <BlogGallery />
-
-  <div>
-    <div>
-      {lastThreePosts.map((elt) => (
-        <div>
-          <a href={elt.url}>{elt.frontmatter.title}</a>
-        </div>
-      ))}
-    </div>
-  </div>
+  <BlogGallery postList={lastThreePosts} />
 </BaseLayout>
