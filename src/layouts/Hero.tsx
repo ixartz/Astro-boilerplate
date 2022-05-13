@@ -15,7 +15,7 @@ const Hero = () => (
       malesuada nisi tellus, non imperdiet nisi tempor at. Lorem ipsum dolor
       sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
       ut labore et dolore."
-      avatar={<img className="h-80 w-72" src={avatar} alt="Avatar image" />}
+      avatar={<img className="h-80 w-64" src={avatar} alt="Avatar image" />}
       socialButtons={
         <>
           <HeroSocial src={twitterIcon} alt="Twitter icon" />

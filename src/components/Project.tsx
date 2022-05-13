@@ -20,7 +20,7 @@ const Project = (props: IProjectProps) => (
       <div className="flex items-center">
         <div className="text-xl font-semibold">{props.name}</div>
 
-        <div className="ml-3">{props.category}</div>
+        <div className="ml-3 flex gap-2">{props.category}</div>
       </div>
 
       <p className="mt-3 text-gray-400">{props.description}</p>
