@@ -18,10 +18,18 @@ const Hero = () => (
       avatar={<img className="h-80 w-64" src={avatar} alt="Avatar image" />}
       socialButtons={
         <>
-          <HeroSocial src={twitterIcon} alt="Twitter icon" />
-          <HeroSocial src={facebookIcon} alt="Facebook icon" />
-          <HeroSocial src={linkedinIcon} alt="Linkedin icon" />
-          <HeroSocial src={youtubeIcon} alt="Youtube icon" />
+          <a href="/">
+            <HeroSocial src={twitterIcon} alt="Twitter icon" />
+          </a>
+          <a href="/">
+            <HeroSocial src={facebookIcon} alt="Facebook icon" />
+          </a>
+          <a href="/">
+            <HeroSocial src={linkedinIcon} alt="Linkedin icon" />
+          </a>
+          <a href="/">
+            <HeroSocial src={youtubeIcon} alt="Youtube icon" />
+          </a>
         </>
       }
     />
