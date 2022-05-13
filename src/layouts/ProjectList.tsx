@@ -1,9 +1,6 @@
 import { Project } from '@/components/Project';
 import { Section } from '@/components/Section';
 import { ColorTags, Tags } from '@/components/Tags';
-import projectFire from '@/images/project-fire.png';
-import projectMaps from '@/images/project-maps.png';
-import projectWebDesign from '@/images/project-web-design.png';
 
 const ProjectList = () => (
   <Section title="Recent Projects">
@@ -13,7 +10,10 @@ const ProjectList = () => (
         bibendum. Nunc non posuere consectetur, justo erat semper enim, non
         hendrerit dui odio id enim."
       link="/"
-      img={{ src: projectWebDesign, alt: 'Project Web Design' }}
+      img={{
+        src: '/assets/images/project-web-design.png',
+        alt: 'Project Web Design',
+      }}
       category={
         <>
           <Tags color={ColorTags.FUCHSIA}>Astro.js</Tags>
@@ -29,7 +29,7 @@ const ProjectList = () => (
         bibendum. Nunc non posuere consectetur, justo erat semper enim, non
         hendrerit dui odio id enim."
       link="/"
-      img={{ src: projectFire, alt: 'Project Fire' }}
+      img={{ src: '/assets/images/project-fire.png', alt: 'Project Fire' }}
       category={
         <>
           <Tags color={ColorTags.VIOLET}>Next.js</Tags>
@@ -44,7 +44,7 @@ const ProjectList = () => (
         bibendum. Nunc non posuere consectetur, justo erat semper enim, non
         hendrerit dui odio id enim."
       link="/"
-      img={{ src: projectMaps, alt: 'Project Maps' }}
+      img={{ src: '/assets/images/project-maps.png', alt: 'Project Maps' }}
       category={
         <>
           <Tags color={ColorTags.FUCHSIA}>Astro.js</Tags>
