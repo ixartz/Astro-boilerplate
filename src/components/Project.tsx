@@ -7,18 +7,23 @@ type IProjectProps = {
   };
   name: string;
   description: string;
+  link: string;
   category: ReactNode;
 };
 
 const Project = (props: IProjectProps) => (
   <div className="flex items-center gap-8">
     <div className="shrink-0">
-      <img className="h-56 w-56" src={props.img.src} alt={props.img.alt} />
+      <a href={props.link}>
+        <img className="h-56 w-56" src={props.img.src} alt={props.img.alt} />
+      </a>
     </div>
 
     <div>
       <div className="flex items-center">
-        <div className="text-xl font-semibold">{props.name}</div>
+        <a href={props.link}>
+          <div className="text-xl font-semibold">{props.name}</div>
+        </a>
 
         <div className="ml-3 flex gap-2">{props.category}</div>
       </div>
