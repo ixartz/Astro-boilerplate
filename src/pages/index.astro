@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '@/layouts/Base.astro';
+import { BlogGallery } from '@/layouts/BlogGallery';
+import { Hero } from '@/layouts/Hero';
+import { ProjectList } from '@/layouts/ProjectList';
 import type { IFrontmatter } from '@/types/IFrontmatter';
 import { AppConfig } from '@/utils/AppConfig';
 import { sortByDate } from '@/utils/Posts';
@@ -13,9 +16,11 @@ const { description } = AppConfig;
 ---
 
 <BaseLayout head={{ title, description }}>
-  Homepage
+  <Hero />
+  <ProjectList />
+  <BlogGallery />
+
   <div>
-    <a href='/posts'>See all pages</a>
     <div>
       {lastThreePosts.map((elt) => (
         <div>
