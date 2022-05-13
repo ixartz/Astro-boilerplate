@@ -15,7 +15,12 @@ const Project = (props: IProjectProps) => (
   <div className="flex items-center gap-8">
     <div className="shrink-0">
       <a href={props.link}>
-        <img className="h-56 w-56" src={props.img.src} alt={props.img.alt} />
+        <img
+          className="h-56 w-56"
+          src={props.img.src}
+          alt={props.img.alt}
+          loading="lazy"
+        />
       </a>
     </div>
 

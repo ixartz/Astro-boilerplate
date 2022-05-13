@@ -27,8 +27,9 @@ const BlogGallery = (props: IBlogGalleryPosts) => (
             <div className="aspect-w-3 aspect-h-2">
               <img
                 className="h-full w-full object-cover object-center"
-                src={elt.frontmatter.img}
-                alt="alt text"
+                src={elt.frontmatter.imgSrc}
+                alt={elt.frontmatter.imgAlt}
+                loading="lazy"
               />
             </div>
 

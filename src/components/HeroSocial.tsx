@@ -4,7 +4,7 @@ type IHeroSocialProps = {
 };
 
 const HeroSocial = (props: IHeroSocialProps) => (
-  <img className="h-12 w-12" src={props.src} alt={props.alt} />
+  <img className="h-12 w-12" src={props.src} alt={props.alt} loading="lazy" />
 );
 
 export { HeroSocial };
