@@ -32,7 +32,6 @@ const ProjectList = () => (
         <>
           <Tags color={ColorTags.VIOLET}>Next.js</Tags>
           <Tags color={ColorTags.EMERALD}>Blog</Tags>
-          <Tags color={ColorTags.SKY}>Tailwind.css</Tags>
           <Tags color={ColorTags.YELLOW}>JavaScript</Tags>
         </>
       }
@@ -46,7 +45,6 @@ const ProjectList = () => (
       category={
         <>
           <Tags color={ColorTags.FUCHSIA}>Astro.js</Tags>
-          <Tags color={ColorTags.CYAN}>Docs</Tags>
           <Tags color={ColorTags.INDIGO}>Bootstrap</Tags>
           <Tags color={ColorTags.ROSE}>TypeScript</Tags>
         </>

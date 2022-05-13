@@ -18,6 +18,7 @@
     "@astrojs/tailwind": "^0.2.1",
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "@types/react": "^18.0.9",
     "@typescript-eslint/eslint-plugin": "^5.23.0",
     "@typescript-eslint/parser": "^5.23.0",
