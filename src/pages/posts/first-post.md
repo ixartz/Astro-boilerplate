@@ -1,5 +1,5 @@
 ---
-layout: '@/templates/BlogPost.astro'
+layout: '@/templates/BasePost.astro'
 title: 1st post
 description: First post description
 publishDate: 2020-01-01T00:00:00Z
