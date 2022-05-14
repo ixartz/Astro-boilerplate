@@ -1,6 +1,8 @@
 ---
-import { Pagination } from '@/components/Pagination';
+import { NewerOlderPagination } from '@/components/NewerOlderPagination';
+import { Section } from '@/components/Section';
 import BaseLayout from '@/layouts/Base.astro';
+import { BlogGallery } from '@/layouts/BlogGallery';
 import type { FrontmatterPage, IFrontmatter } from '@/types/IFrontmatter';
 import { AppConfig } from '@/utils/AppConfig';
 import { sortByDate } from '@/utils/Posts';
@@ -44,13 +46,9 @@ const description =
 ---
 
 <BaseLayout head={{ title, description }}>
-  All posts
-  <div>
-    {page.data.map((elt) => (
-      <div>
-        <a href={elt.url}>{elt.frontmatter.title}</a>
-      </div>
-    ))}
-  </div>
-  <Pagination page={page} />
+  <BlogGallery postList={page.data} />
+
+  <Section>
+    <NewerOlderPagination page={page} />
+  </Section>
 </BaseLayout>
