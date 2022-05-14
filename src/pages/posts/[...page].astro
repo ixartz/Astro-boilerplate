@@ -1,8 +1,8 @@
 ---
 import { NewerOlderPagination } from '@/components/NewerOlderPagination';
 import { Section } from '@/components/Section';
-import BaseLayout from '@/layouts/Base.astro';
 import { BlogGallery } from '@/layouts/BlogGallery';
+import Base from '@/templates/Base.astro';
 import type { FrontmatterPage, IFrontmatter } from '@/types/IFrontmatter';
 import { AppConfig } from '@/utils/AppConfig';
 import { sortByDate } from '@/utils/Posts';
@@ -45,10 +45,10 @@ const description =
   'Pagination example built with Astro styled with Tailwind CSS.';
 ---
 
-<BaseLayout head={{ title, description }}>
+<Base head={{ title, description }}>
   <BlogGallery postList={page.data} />
 
   <Section>
     <NewerOlderPagination page={page} />
   </Section>
-</BaseLayout>
+</Base>

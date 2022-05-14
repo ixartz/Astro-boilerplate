@@ -1,8 +1,8 @@
 ---
-import BaseLayout from '@/layouts/Base.astro';
 import { BlogGallery } from '@/layouts/BlogGallery';
 import { Hero } from '@/layouts/Hero';
 import { ProjectList } from '@/layouts/ProjectList';
+import Base from '@/templates/Base.astro';
 import type { IFrontmatter } from '@/types/IFrontmatter';
 import { AppConfig } from '@/utils/AppConfig';
 import { sortByDate } from '@/utils/Posts';
@@ -15,8 +15,8 @@ const { title } = AppConfig;
 const { description } = AppConfig;
 ---
 
-<BaseLayout head={{ title, description }}>
+<Base head={{ title, description }}>
   <Hero />
   <ProjectList />
   <BlogGallery postList={lastThreePosts} />
-</BaseLayout>
+</Base>
