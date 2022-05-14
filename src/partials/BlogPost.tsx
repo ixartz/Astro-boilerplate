@@ -14,12 +14,23 @@ const BlogPost = (props: IBlogPostProps) => (
   <Section>
     <h1 className="text-center text-3xl font-bold">{props.content.title}</h1>
 
-    <div className="mt-5 text-sm text-gray-400">
+    <div className="mt-2 text-center text-sm text-gray-400">
       By {AppConfig.author} on{' '}
       {format(new Date(props.content.publishDate), 'LLL d, yyyy')}
     </div>
 
-    {props.children}
+    <div className="mx-auto mt-5 max-w-screen-md">
+      <div className="aspect-w-3 aspect-h-2">
+        <img
+          className="h-full w-full rounded-lg object-cover object-center"
+          src={props.content.imgSrc}
+          alt={props.content.imgAlt}
+          loading="lazy"
+        />
+      </div>
+
+      <div className="mt-8">{props.children}</div>
+    </div>
   </Section>
 );
 
