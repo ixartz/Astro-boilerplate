@@ -1,7 +1,7 @@
 ---
-import { BlogGallery } from '@/layouts/BlogGallery';
-import { Hero } from '@/layouts/Hero';
-import { ProjectList } from '@/layouts/ProjectList';
+import { Hero } from '@/partials/Hero';
+import { ProjectList } from '@/partials/ProjectList';
+import { RecentPosts } from '@/partials/RecentPosts';
 import Base from '@/templates/Base.astro';
 import type { IFrontmatter } from '@/types/IFrontmatter';
 import { AppConfig } from '@/utils/AppConfig';
@@ -18,5 +18,5 @@ const { description } = AppConfig;
 <Base head={{ title, description }}>
   <Hero />
   <ProjectList />
-  <BlogGallery postList={lastThreePosts} />
+  <RecentPosts postList={lastThreePosts} />
 </Base>

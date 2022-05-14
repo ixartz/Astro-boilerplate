@@ -1,7 +1,7 @@
 ---
+import { BlogGallery } from '@/components/BlogGallery';
 import { NewerOlderPagination } from '@/components/NewerOlderPagination';
 import { Section } from '@/components/Section';
-import { BlogGallery } from '@/layouts/BlogGallery';
 import Base from '@/templates/Base.astro';
 import type { FrontmatterPage, IFrontmatter } from '@/types/IFrontmatter';
 import { AppConfig } from '@/utils/AppConfig';
@@ -30,7 +30,7 @@ export async function getStaticPaths({ paginate, rss }: GetStaticPaths) {
   });
 
   // Return a paginated collection of paths for all posts
-  return paginate(sortedPosts, { pageSize: 3 });
+  return paginate(sortedPosts, { pageSize: 6 });
 }
 
 interface Props {
@@ -46,7 +46,9 @@ const description =
 ---
 
 <Base head={{ title, description }}>
-  <BlogGallery postList={page.data} />
+  <Section>
+    <BlogGallery postList={page.data} />
+  </Section>
 
   <Section>
     <NewerOlderPagination page={page} />

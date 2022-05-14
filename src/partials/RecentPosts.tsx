@@ -1,14 +1,14 @@
 import type { MarkdownInstance } from 'astro';
 
-import { BlogCard } from '@/components/BlogCard';
+import { BlogGallery } from '@/components/BlogGallery';
 import { Section } from '@/components/Section';
 import type { IFrontmatter } from '@/types/IFrontmatter';
 
-type IBlogGalleryPosts = {
+type IRecentPostsProps = {
   postList: MarkdownInstance<IFrontmatter>[];
 };
 
-const BlogGallery = (props: IBlogGalleryPosts) => (
+const RecentPosts = (props: IRecentPostsProps) => (
   <Section
     title={
       <div className="flex items-baseline justify-between">
@@ -20,12 +20,8 @@ const BlogGallery = (props: IBlogGalleryPosts) => (
       </div>
     }
   >
-    <div className="grid grid-cols-3 gap-6">
-      {props.postList.map((elt) => (
-        <BlogCard key={elt.url} instance={elt} />
-      ))}
-    </div>
+    <BlogGallery postList={props.postList} />
   </Section>
 );
 
-export { BlogGallery };
+export { RecentPosts };
