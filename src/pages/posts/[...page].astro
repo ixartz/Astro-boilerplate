@@ -1,6 +1,7 @@
 ---
 import { BlogGallery } from '@/components/BlogGallery';
 import { NewerOlderPagination } from '@/components/NewerOlderPagination';
+import { PaginationHeader } from '@/components/PaginationHeader';
 import { Section } from '@/components/Section';
 import Base from '@/templates/Base.astro';
 import type { FrontmatterPage, IFrontmatter } from '@/types/IFrontmatter';
@@ -46,6 +47,13 @@ const description =
 ---
 
 <Base head={{ title, description }}>
+  <Section>
+    <PaginationHeader
+      title='Random title here'
+      description='Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    />
+  </Section>
+
   <Section>
     <BlogGallery postList={page.data} />
   </Section>
