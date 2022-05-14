@@ -32,7 +32,7 @@ type ITagsProps = {
   children: ReactNode;
 };
 
-const mapColorToClass = {
+const colorToClassMap = {
   [ColorTags.SLATE]: 'bg-slate-400 text-slate-900',
   [ColorTags.GRAY]: 'bg-gray-400 text-gray-900',
   [ColorTags.ZINC]: 'bg-zinc-400 text-zinc-900',
@@ -60,7 +60,7 @@ const mapColorToClass = {
 const Tags = (props: ITagsProps) => (
   <div
     className={`rounded-md px-2 py-1 text-xs font-semibold ${
-      mapColorToClass[props.color]
+      colorToClassMap[props.color]
     }`}
   >
     {props.children}
