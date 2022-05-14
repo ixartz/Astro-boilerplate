@@ -1,15 +1,11 @@
 ---
-import { format } from 'date-fns';
-
+import { BlogPost } from '@/partials/BlogPost';
 import Base from '@/templates/Base.astro';
+import type { IFrontmatter } from '@/types/IFrontmatter';
 import { AppConfig } from '@/utils/AppConfig';
 
 export interface Props {
-  content: {
-    title: string;
-    description: string;
-    publishDate: string;
-  };
+  content: IFrontmatter;
 }
 
 const { content } = Astro.props as Props;
@@ -17,7 +13,7 @@ const title = `${content.title} - ${AppConfig.site_name}`;
 ---
 
 <Base head={{ title, description: content.description }}>
-  <h1>{content.title} by Auth</h1>
-  <slot></slot>
-  <p>Written on: {format(new Date(content.publishDate), 'LLL d, yyyy')}</p>
+  <BlogPost content={content}>
+    <slot></slot>
+  </BlogPost>
 </Base>
