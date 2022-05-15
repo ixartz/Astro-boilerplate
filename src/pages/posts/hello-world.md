@@ -1,8 +1,8 @@
 ---
 layout: '@/templates/BasePost.astro'
-title: Hello first post
-description: First post description
-publishDate: 2020-02-01T00:00:00Z
+title: Hello Lorem ipsum dolor sit
+description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero esse non molestias eos excepturi.
+publishDate: 2020-01-01T00:00:00Z
 imgSrc: '/assets/images/image-post6.jpeg'
 imgAlt: 'Image post 6'
 ---
