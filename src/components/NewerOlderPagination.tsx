@@ -1,4 +1,4 @@
-import type { FrontmatterPage } from '@/types/IFrontmatter';
+import type { FrontmatterPage } from '@/types/IFrontMatter';
 
 type INewerOlderPaginationProps = {
   page: FrontmatterPage;

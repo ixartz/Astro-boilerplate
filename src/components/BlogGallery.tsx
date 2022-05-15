@@ -1,6 +1,6 @@
 import type { MarkdownInstance } from 'astro';
 
-import type { IFrontmatter } from '@/types/IFrontmatter';
+import type { IFrontmatter } from '@/types/IFrontMatter';
 
 import { BlogCard } from './BlogCard';
 

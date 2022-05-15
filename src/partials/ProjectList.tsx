@@ -1,9 +1,16 @@
+import { GradientText } from '@/components/GradientText';
 import { Project } from '@/components/Project';
 import { Section } from '@/components/Section';
 import { ColorTags, Tags } from '@/components/Tags';
 
 const ProjectList = () => (
-  <Section title="Recent Projects">
+  <Section
+    title={
+      <>
+        Recent <GradientText>Projects</GradientText>
+      </>
+    }
+  >
     <Project
       name="Project 1"
       description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse

@@ -1,7 +1,7 @@
 import type { MarkdownInstance } from 'astro';
 import { format } from 'date-fns';
 
-import type { IFrontmatter } from '@/types/IFrontmatter';
+import type { IFrontmatter } from '@/types/IFrontMatter';
 
 type IBlogCardProps = {
   instance: MarkdownInstance<IFrontmatter>;

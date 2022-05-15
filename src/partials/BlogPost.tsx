@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import type { ReactNode } from 'react';
 
 import { Section } from '@/components/Section';
-import type { IFrontmatter } from '@/types/IFrontmatter';
+import type { IFrontmatter } from '@/types/IFrontMatter';
 import { AppConfig } from '@/utils/AppConfig';
 
 type IBlogPostProps = {
