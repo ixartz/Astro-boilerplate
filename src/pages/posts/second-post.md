@@ -7,4 +7,4 @@ imgSrc: '/assets/images/image-post5.jpeg'
 imgAlt: 'Image post 5'
 ---
 
-Full typography example at [this page](./sixth-post.md).
+Full typography example at [this page](./sixth-post).
