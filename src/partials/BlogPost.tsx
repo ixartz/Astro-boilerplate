@@ -19,7 +19,7 @@ const BlogPost = (props: IBlogPostProps) => (
       {format(new Date(props.content.publishDate), 'LLL d, yyyy')}
     </div>
 
-    <div className="mx-auto mt-5 max-w-screen-md">
+    <div className="mx-auto mt-5 max-w-prose">
       <div className="aspect-w-3 aspect-h-2">
         <img
           className="h-full w-full rounded-lg object-cover object-center"
@@ -29,7 +29,9 @@ const BlogPost = (props: IBlogPostProps) => (
         />
       </div>
 
-      <div className="mt-8">{props.children}</div>
+      <div className="prose prose-invert mt-8 prose-img:rounded-lg">
+        {props.children}
+      </div>
     </div>
   </Section>
 );

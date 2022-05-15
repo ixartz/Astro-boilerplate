@@ -7,6 +7,6 @@ imgSrc: '/assets/images/image-post.jpeg'
 imgAlt: 'Image post'
 ---
 
-# title hello
+## title hello
 
 ![Random image](/src/images/random.jpeg)
