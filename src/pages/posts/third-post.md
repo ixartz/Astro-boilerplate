@@ -7,6 +7,4 @@ imgSrc: '/assets/images/image-post4.jpeg'
 imgAlt: 'Image post 4'
 ---
 
-# title hello
-
-![Random image](/src/images/random.jpeg)
+Full typography example at [this page](./sixth-post.md).
