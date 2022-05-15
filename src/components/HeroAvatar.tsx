@@ -8,7 +8,7 @@ type IHeroAvatarProps = {
 };
 
 const HeroAvatar = (props: IHeroAvatarProps) => (
-  <div className="flex items-center gap-24">
+  <div className="flex flex-col items-center md:flex-row md:gap-x-24">
     <div>
       <h1 className="text-3xl font-bold">{props.title}</h1>
 
