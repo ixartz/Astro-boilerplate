@@ -31,7 +31,7 @@ const Navbar = () => (
       />
 
       <NavMenu>
-        <NavMenuItem href="posts">Blogs</NavMenuItem>
+        <NavMenuItem href="/demo/astro-boilerplate/posts">Blogs</NavMenuItem>
         <NavMenuItem href="/demo/astro-boilerplate">GitHub</NavMenuItem>
         <NavMenuItem href="/demo/astro-boilerplate">Twitter</NavMenuItem>
       </NavMenu>
