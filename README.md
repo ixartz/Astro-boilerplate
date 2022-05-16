@@ -74,3 +74,13 @@ All commands are run from the root of the project, from a terminal:
 | `npm run dev`     | Starts local dev server at `localhost:3000`  |
 | `npm run build`   | Build your production site to `./dist/`      |
 | `npm run preview` | Preview your build locally, before deploying |
+| `npm run clean`   | Remove `./dist` folder                       |
+| `npm run lint`    | Run ESLint and report styling error          |
+
+### Contributions
+
+Everyone is welcome to contribute to this project. Feel free to open an issue if you have question or found a bug.
+
+### License
+
+Licensed under the MIT License, Copyright © 2022
