@@ -1,5 +1,6 @@
 ---
 import { BlogPost } from '@/partials/BlogPost';
+import { CTA } from '@/partials/CTA';
 import Base from '@/templates/Base.astro';
 import type { IFrontmatter } from '@/types/IFrontMatter';
 import { AppConfig } from '@/utils/AppConfig';
@@ -16,4 +17,6 @@ const title = `${content.title} - ${AppConfig.site_name}`;
   <BlogPost frontmatter={content}>
     <slot></slot>
   </BlogPost>
+
+  <CTA />
 </Base>
