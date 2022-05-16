@@ -7,4 +7,4 @@ imgSrc: '/demo/astro-boilerplate/assets/images/image-post6.jpeg'
 imgAlt: 'Image post 6'
 ---
 
-Full typography example at [this page](./sixth-post).
+Full typography example at [this page](/demo/astro-boilerplate/posts/sixth-post).

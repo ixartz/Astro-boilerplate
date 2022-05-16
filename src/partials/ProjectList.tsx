@@ -20,7 +20,7 @@ const ProjectList = () => (
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
         bibendum. Nunc non posuere consectetur, justo erat semper enim, non
         hendrerit dui odio id enim."
-        link="/"
+        link="/demo/astro-boilerplate"
         img={{
           src: 'assets/images/project-web-design.png',
           alt: 'Project Web Design',
@@ -39,7 +39,7 @@ const ProjectList = () => (
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
         bibendum. Nunc non posuere consectetur, justo erat semper enim, non
         hendrerit dui odio id enim."
-        link="/"
+        link="/demo/astro-boilerplate"
         img={{ src: 'assets/images/project-fire.png', alt: 'Project Fire' }}
         category={
           <>
@@ -54,7 +54,7 @@ const ProjectList = () => (
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
         bibendum. Nunc non posuere consectetur, justo erat semper enim, non
         hendrerit dui odio id enim."
-        link="/"
+        link="/demo/astro-boilerplate"
         img={{ src: 'assets/images/project-maps.png', alt: 'Project Maps' }}
         category={
           <>
