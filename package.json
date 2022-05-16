@@ -47,7 +47,7 @@
     "tailwindcss": "^3.0.24"
   },
   "dependencies": {
-    "astro-boilerplate-components": "^1.0.3",
+    "astro-boilerplate-components": "^1.0.5",
     "date-fns": "^2.28.0"
   },
   "author": "Ixartz (https://github.com/ixartz)"
