@@ -53,11 +53,11 @@ const description =
   'Pagination example built with Astro styled with Tailwind CSS.';
 
 if (page.url.next) {
-  page.url.next = `/demo/astro-boilerplate/${page.url.next}`;
+  page.url.next = `/demo/astro-boilerplate${page.url.next}`;
 }
 
 if (page.url.prev) {
-  page.url.prev = `/demo/astro-boilerplate/${page.url.next}`;
+  page.url.prev = `/demo/astro-boilerplate${page.url.prev}`;
 }
 ---
 
