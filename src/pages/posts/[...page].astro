@@ -51,6 +51,8 @@ const titleBase = `Blog page ${page.currentPage}`;
 const title = titleBase + titleSuffix;
 const description =
   'Pagination example built with Astro styled with Tailwind CSS.';
+page.url.next = `/demo/astro-boilerplate/${page.url.next}`;
+page.url.prev = `/demo/astro-boilerplate/${page.url.next}`;
 ---
 
 <Base head={{ title, description }}>
