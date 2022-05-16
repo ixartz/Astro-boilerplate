@@ -1,7 +1,10 @@
-import { GradientText } from '@/components/GradientText';
-import { Project } from '@/components/Project';
-import { Section } from '@/components/Section';
-import { ColorTags, Tags } from '@/components/Tags';
+import {
+  ColorTags,
+  GradientText,
+  Project,
+  Section,
+  Tags,
+} from 'astro-boilerplate-components';
 
 const ProjectList = () => (
   <Section

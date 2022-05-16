@@ -1,4 +1,7 @@
-import type { IFrontmatter, MarkdownInstance } from '@/types/IFrontMatter';
+import type {
+  IFrontmatter,
+  MarkdownInstance,
+} from 'astro-boilerplate-components';
 
 export const sortByDate = (posts: MarkdownInstance<IFrontmatter>[]) => {
   return posts.sort(
