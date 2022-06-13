@@ -1,8 +1,8 @@
-# Astro Boilerplate with TypeScript and Tailwind CSS
+# Astro Boilerplate with TypeScript and Tailwind CSS [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
 
-🚀 Astro Boilerplate is starter code for your blog based on Astro with Tailwind CSS 3.0. ⚡️ Made with Astro, TypeScript, ESLint, Prettier, Tailwind CSS.
+🚀 Astro Boilerplate is starter code for your blog or portfolio based on Astro with Tailwind CSS 3.0. ⚡️ Made with Astro, TypeScript, ESLint, Prettier, Tailwind CSS.
 
-Clone this project and use it to create your own Astro blog. You can check a [Astro templates demo](https://creativedesignsguru.com/demo/astro-boilerplate/).
+Clone this project and use it to create your own Astro blog. You can check the [Astro templates demo](https://creativedesignsguru.com/demo/astro-boilerplate/).
 
 ### Features
 
@@ -27,6 +27,7 @@ Developer experience first:
 - 🦊 Husky
 - 🚫 lint-staged
 - 🚨 Commitlint
+- 🔧 One-click deploy on Netlify (or, manual if you prefer)
 
 ESLint with:
 
@@ -65,6 +66,22 @@ npm run dev
 
 Open http://localhost:3000 with your favorite browser to see your project.
 
+### Deploy to production (manual)
+
+You can create an optimized production build with:
+
+```shell
+npm run build-prod
+```
+
+Now, your blog is ready to be deployed. All generated files are located at `dist` folder, which you can deploy the folder to any hosting service you prefer.
+
+### Deploy to Netlify
+
+Clone this repository on own GitHub account and deploy to Netlify:
+
+[![Netlify Deploy button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ixartz/Astro-boilerplate)
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -85,3 +102,7 @@ Everyone is welcome to contribute to this project. Feel free to open an issue if
 ### License
 
 Licensed under the MIT License, Copyright © 2022
+
+---
+
+Made with ♥ by [CreativeDesignsGuru](https://creativedesignsguru.com) [![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Ixartz)](https://twitter.com/ixartz)
