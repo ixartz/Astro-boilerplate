@@ -15,6 +15,7 @@ A complete Blog feature:
 - 🌈 Include a dark blog theme
 - ⬇️ Markdown
 - 📦 Image lazy loading
+- 💎 Responsive design
 
 Developer experience first:
 

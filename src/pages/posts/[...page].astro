@@ -17,25 +17,11 @@ import { sortByDate } from '@/utils/Posts';
 
 type GetStaticPaths = {
   paginate: any;
-  rss: any;
 }; // Overrides `GetStaticPathsOptions` types from Astro
 
-export async function getStaticPaths({ paginate, rss }: GetStaticPaths) {
+export async function getStaticPaths({ paginate }: GetStaticPaths) {
   const allPosts = await Astro.glob<IFrontmatter>('./*.md');
   const sortedPosts = sortByDate(allPosts);
-
-  // Generate an RSS feed from this collection of posts.
-  rss({
-    title: AppConfig.title,
-    description: AppConfig.description,
-    customData: `<language>${AppConfig.locale_region}</language>`,
-    items: sortedPosts.map((elt) => ({
-      title: elt.frontmatter.title,
-      description: elt.frontmatter.description,
-      link: elt.url,
-      pubDate: elt.frontmatter.publishDate,
-    })),
-  });
 
   // Return a paginated collection of paths for all posts
   return paginate(sortedPosts, { pageSize: 6 });

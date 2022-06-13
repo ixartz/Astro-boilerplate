@@ -2,7 +2,7 @@
 layout: '@/templates/BasePost.astro'
 title: Typography example
 description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero esse non molestias eos excepturi.
-publishDate: 2020-02-06T00:00:00Z
+pubDate: 2020-02-06T00:00:00Z
 imgSrc: '/assets/images/image-post.jpeg'
 imgAlt: 'Image post'
 ---
@@ -106,10 +106,6 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero esse non m
 [You can use numbers for reference-style link definitions][1]
 
 Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links.
-http://www.example.com or <http://www.example.com> and sometimes
-example.com (but not on Github, for example).
 
 Some text to show that the reference links can follow later.
 
