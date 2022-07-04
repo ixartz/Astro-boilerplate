@@ -108,7 +108,8 @@
       "parser": "astro-eslint-parser",
       "parserOptions": {
         "parser": "@typescript-eslint/parser",
-        "project": "./tsconfig.json"
+        "project": "./tsconfig.json",
+        "extraFileExtensions": [".astro"]
       },
       "rules": {
         "prettier/prettier": [
