@@ -84,7 +84,7 @@ to see your project.
 You can create an optimized production build with:
 
 ```shell
-npm run build-prod
+npm run build
 ```
 
 Now, your blog is ready to be deployed. All generated files are located at
