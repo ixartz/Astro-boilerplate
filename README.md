@@ -76,7 +76,7 @@ Then, you can run locally in development mode with live reload:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your favorite browser
+Open [http://localhost:4321](http://localhost:4321) with your favorite browser
 to see your project.
 
 ### Deploy to production (manual)
