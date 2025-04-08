@@ -1,49 +1,16 @@
 import { Section } from 'astro-boilerplate-components';
 
-import betterStackLogo from '../../public/assets/images/better-stack-white.png';
-import clerkLogo from '../../public/assets/images/clerk.png';
+import arcjetLogo from '../../public/assets/images/arcjet-dark.svg';
+import clerkLogo from '../../public/assets/images/clerk-logo-white.png';
+import codeRabbitLogo from '../../public/assets/images/coderabbit-logo-dark.svg';
 import crowdinLogo from '../../public/assets/images/crowdin-white.png';
-import nextlessLogo from '../../public/assets/images/nextlessjs.png';
+import nextjsBoilerplateLogo from '../../public/assets/images/nextjs-boilerplate-saas.png';
 import sentryLogo from '../../public/assets/images/sentry-white.png';
-import tursoLogo from '../../public/assets/images/turso.png';
 
 const Sponsors = () => (
   <Section title="Sponsors">
     <table className="mx-auto border-collapse">
       <tbody>
-        <tr className="h-56">
-          <td className="border-2 border-gray-300 p-3">
-            <a
-              href="https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo"
-              target="_blank"
-            >
-              <img src={sentryLogo.src} alt="Sentry" width={260} height={224} />
-            </a>
-          </td>
-          <td className="border-2 border-gray-300 p-3">
-            <a
-              href="https://betterstack.com/?utm_source=github&utm_medium=sponsorship&utm_campaign=next-js-boilerplate"
-              target="_blank"
-            >
-              <img
-                src={betterStackLogo.src}
-                alt="Better Stack"
-                width={260}
-                height={224}
-              />
-            </a>
-          </td>
-          <td className="border-2 border-gray-300 p-3">
-            <a href="https://nextlessjs.com">
-              <img
-                src={nextlessLogo.src}
-                alt="React SaaS Boilerplate Next.js"
-                width={260}
-                height={224}
-              />
-            </a>
-          </td>
-        </tr>
         <tr className="h-56">
           <td className="border-2 border-gray-300 p-3">
             <a
@@ -60,15 +27,30 @@ const Sponsors = () => (
           </td>
           <td className="border-2 border-gray-300 p-3">
             <a
-              href="https://turso.tech/?utm_source=nextjsstarterbp"
+              href="https://www.coderabbit.ai?utm_source=next_js_starter&utm_medium=github&utm_campaign=next_js_starter_oss_2025"
               target="_blank"
             >
               <img
-                src={tursoLogo.src}
-                alt="SQLite Developer Experience"
+                src={codeRabbitLogo.src}
+                alt="CodeRabbit"
                 width={260}
                 height={224}
               />
+            </a>
+          </td>
+          <td className="border-2 border-gray-300 p-3">
+            <a
+              href="https://sentry.io/for/nextjs/?utm_source=github&utm_medium=paid-community&utm_campaign=general-fy25q1-nextjs&utm_content=github-banner-nextjsboilerplate-logo"
+              target="_blank"
+            >
+              <img src={sentryLogo.src} alt="Sentry" width={260} height={224} />
+            </a>
+          </td>
+        </tr>
+        <tr className="h-56">
+          <td className="border-2 border-gray-300 p-3">
+            <a href="https://launch.arcjet.com/Q6eLbRE" target="_blank">
+              <img src={arcjetLogo.src} alt="Arcjet" width={260} height={224} />
             </a>
           </td>
           <td className="border-2 border-gray-300 p-3">
@@ -76,6 +58,19 @@ const Sponsors = () => (
               <img
                 src={crowdinLogo.src}
                 alt="Crowdin"
+                width={260}
+                height={224}
+              />
+            </a>
+          </td>
+          <td className="border-2 border-gray-300 p-3">
+            <a
+              href="https://nextjs-boilerplate.com/pro-saas-starter-kit"
+              target="_blank"
+            >
+              <img
+                src={nextjsBoilerplateLogo.src}
+                alt="Next.js Boilerpalte SaaS"
                 width={260}
                 height={224}
               />
