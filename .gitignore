@@ -21,3 +21,7 @@ pnpm-debug.log*
 *.pem
 Thumbs.db
 .history
+.vercel
+
+# Local Netlify folder
+.netlify
