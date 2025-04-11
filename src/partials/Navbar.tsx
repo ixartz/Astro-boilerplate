@@ -13,27 +13,21 @@ const Navbar = () => (
         <Logo
           icon={
             <svg
-              className="mr-1 h-10 w-10 stroke-cyan-600"
+              className="mr-1 h-5 w-5 fill-current text-cyan-500"
               xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              viewBox="0 0 6.35 6.35"
+              height="24"
+              width="24"
             >
-              <path d="M0 0h24v24H0z" stroke="none"></path>
-              <rect x="3" y="12" width="6" height="8" rx="1"></rect>
-              <rect x="9" y="8" width="6" height="12" rx="1"></rect>
-              <rect x="15" y="4" width="6" height="16" rx="1"></rect>
-              <path d="M4 20h14"></path>
+              <path d="m 3.176292,0.52916623 c -0.7275637,0 -1.3245961,0.59496497 -1.3245961,1.32252887 0,0.7275639 0.5970324,1.3245964 1.3245961,1.3245962 0.727564,0 1.3220123,-0.5970323 1.3220123,-1.3245962 0,-0.7275639 -0.5944483,-1.32252887 -1.3220123,-1.32252887 z M 2.1173387,3.4398668 c -0.7943443,0 -1.58817203,0.5292183 -1.58817203,1.3220123 V 5.350014 c 0.05042,0.3308308 0.2646094,0.4713351 0.52973543,0.4708184 H 5.2916149 C 5.5567406,5.8213615 5.731772,5.6000289 5.8208331,5.350014 V 4.7618791 C 5.8213623,3.7044758 5.0275223,3.4398668 4.2326614,3.4398668 Z" />
             </svg>
           }
-          name="Portfolio"
+          name="BinyamMamo"
         />
       </a>
 
       <NavMenu>
-        <NavMenuItem href="/connect">	Contact Me</NavMenuItem>
+        <NavMenuItem href="/connect"> Contact Me</NavMenuItem>
       </NavMenu>
     </NavbarTwoColumns>
   </Section>
