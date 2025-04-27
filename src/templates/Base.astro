@@ -22,9 +22,7 @@ const {
     <meta name='author' content={AppConfig.author} />
 
     <link rel='alternate' type='application/rss+xml' href='/rss.xml' />
-    <!-- <link rel='icon' type='image/x-icon' href='/favicon.ico' /> -->
-    <link rel='icon' type='image/png' href='/assets/images/portrait_square.png'
-    />
+    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
 
     <!-- Font -->
     <link rel='preconnect' href='https://fonts.googleapis.com' />
@@ -49,6 +47,14 @@ const {
       /* Base styles */
       html {
         scroll-behavior: smooth;
+        overflow-y: scroll;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+      }
+
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      html::-webkit-scrollbar {
+        display: none;
       }
 
       body {
@@ -109,25 +115,6 @@ const {
         color: var(--text-color) !important;
       }
 
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 8px;
-        height: 8px;
-      }
-
-      ::-webkit-scrollbar-track {
-        background: var(--bg-secondary);
-      }
-
-      ::-webkit-scrollbar-thumb {
-        background: var(--accent-color);
-        border-radius: 4px;
-      }
-
-      ::-webkit-scrollbar-thumb:hover {
-        background: #06b6d4;
-      }
-
       /* Transitions for all interactive elements */
       a,
       button,
@@ -143,6 +130,7 @@ const {
         position: relative;
       }
 
+      /* Animations */
       @keyframes fadeIn {
         from {
           opacity: 0;
@@ -154,6 +142,10 @@ const {
         }
       }
 
+      .animate-fadeIn {
+        animation: fadeIn 0.3s ease-out;
+      }
+
       @keyframes bounce {
         0%,
         100% {
@@ -162,10 +154,6 @@ const {
         50% {
           transform: translateY(-10px);
         }
-      }
-
-      .animate-fadeIn {
-        animation: fadeIn 0.3s ease-out;
       }
 
       .animate-fade-in {

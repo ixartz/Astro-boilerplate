@@ -37,7 +37,7 @@ const Tag = ({
 
 const ProjectList = () => (
   <div
-    className="flex min-h-screen flex-col justify-center px-4 sm:px-6 lg:px-8"
+    className="flex min-h-screen flex-col justify-center px-4 pb-0 sm:px-6 md:pb-12 lg:px-8"
     id="projects-section"
   >
     <Section>
@@ -101,11 +101,10 @@ const ProjectList = () => (
           }
         />
       </div>
-
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-1 left-1/2 hidden -translate-x-1/2 animate-bounce md:flex">
         <button
           onClick={() => {
-            const footer = document.querySelector('footer');
+            const footer = document.querySelector('#hero-section');
             if (footer) {
               footer.scrollIntoView({ behavior: 'smooth' });
             }
@@ -124,7 +123,7 @@ const ProjectList = () => (
               strokeLinecap="round"
               strokeLinejoin="round"
               strokeWidth={2}
-              d="M19 9l-7 7-7-7"
+              d="M5 15l7-7 7 7"
             />
           </svg>
         </button>

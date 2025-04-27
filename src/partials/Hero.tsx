@@ -31,7 +31,10 @@ const Hero = () => {
           <div className="w-full text-center md:w-2/3 md:text-left">
             <h1 className="mb-4 text-3xl font-bold sm:text-4xl md:text-5xl">
               Hi there, I'm{' '}
-              <span className="bg-gradient-to-r from-emerald-500 to-emerald-600 bg-clip-text font-extrabold text-transparent">
+              <span
+                style={{ textShadow: '1px 1px 2px #10b98199' }}
+                className="bg-gradient-to-r from-emerald-600 to-emerald-600 bg-clip-text font-extrabold text-transparent"
+              >
                 Binyam
               </span>{' '}
             </h1>

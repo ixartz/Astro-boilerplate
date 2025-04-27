@@ -18,16 +18,193 @@ import { AppConfig } from '@/utils/AppConfig';
   </main>
 
   <Footer />
+
+  <!-- Floating navigation dots -->
+  <div class='fixed right-6 top-1/2 z-40 hidden -translate-y-1/2 md:block'>
+    <div class='flex flex-col space-y-6'>
+      <a
+        href='#hero-section'
+        class='nav-dot relative flex h-4 w-4 items-center justify-center'
+        aria-label='Go to Hero section'
+      >
+        <span
+          class='absolute h-3 w-3 rounded-full bg-gray-600 transition-all duration-300'
+        ></span>
+        <span class='drip-effect absolute h-full w-full rounded-full'></span>
+      </a>
+      <a
+        href='#education-section'
+        class='nav-dot relative flex h-4 w-4 items-center justify-center'
+        aria-label='Go to Education section'
+      >
+        <span
+          class='absolute h-3 w-3 rounded-full bg-gray-600 transition-all duration-300'
+        ></span>
+        <span class='drip-effect absolute h-full w-full rounded-full'></span>
+      </a>
+      <a
+        href='#projects-section'
+        class='nav-dot relative flex h-4 w-4 items-center justify-center'
+        aria-label='Go to Projects section'
+      >
+        <span
+          class='absolute h-3 w-3 rounded-full bg-gray-600 transition-all duration-300'
+        ></span>
+        <span class='drip-effect absolute h-full w-full rounded-full'></span>
+      </a>
+    </div>
+  </div>
 </Base>
 
+<style>
+  .nav-dot {
+    transition: all 0.3s ease;
+  }
+
+  .nav-dot:hover span:first-child {
+    background-color: rgb(16, 185, 129);
+    transform: scale(1.1);
+  }
+
+  .nav-dot.active span:first-child {
+    background-color: rgb(16, 185, 129);
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+  }
+
+  .drip-effect {
+    background-color: rgb(16, 185, 129);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s ease;
+  }
+
+  .nav-dot.active .drip-effect {
+    animation: drip 1.5s ease-in-out infinite;
+  }
+
+  @keyframes drip {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+  }
+
+  /* Liquid drip transition when changing active state */
+  .nav-dot.transitioning span:first-child {
+    animation: liquidTransition 0.6s ease-out;
+  }
+
+  @keyframes liquidTransition {
+    0% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(0.8, 1.2);
+    }
+    50% {
+      transform: scale(1.2, 0.8);
+    }
+    70% {
+      transform: scale(0.9, 1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  /* Ripple effect on click */
+  .nav-dot::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(16, 185, 129, 0.3);
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.5s ease;
+  }
+
+  .nav-dot:active::after {
+    transform: scale(2);
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+</style>
+
 <script>
-  // Keep scroll behavior smooth
   document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.min-h-screen');
+    const navDots = document.querySelectorAll('.nav-dot');
+    let previousActive = null;
 
-    // Add smooth scrolling to sections if needed
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.6,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          const activeDot = document.querySelector(`.nav-dot[href="#${id}"]`);
+
+          if (activeDot && !activeDot.classList.contains('active')) {
+            // Remove active class from all dots
+            navDots.forEach((dot) => {
+              dot.classList.remove('active');
+              dot.classList.remove('transitioning');
+            });
+
+            // Add transitioning class for liquid animation
+            if (previousActive) {
+              previousActive.classList.add('transitioning');
+              setTimeout(() => {
+                previousActive.classList.remove('transitioning');
+              }, 600);
+            }
+
+            // Add active class to current dot
+            activeDot.classList.add('active');
+            previousActive = activeDot;
+          }
+        }
+      });
+    }, observerOptions);
+
     sections.forEach((section) => {
-      // You can add any additional scroll behavior here if needed
+      observer.observe(section);
+    });
+
+    // Add click ripple effect
+    navDots.forEach((dot) => {
+      dot.addEventListener('click', (e) => {
+        // Create ripple element
+        const ripple = document.createElement('span');
+        ripple.classList.add('ripple');
+        dot.appendChild(ripple);
+
+        // Position the ripple
+        const rect = dot.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        ripple.style.width = ripple.style.height = `${size}px`;
+        ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+        ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+
+        // Remove ripple after animation
+        setTimeout(() => {
+          ripple.remove();
+        }, 600);
+      });
     });
   });
 </script>

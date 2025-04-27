@@ -125,13 +125,13 @@ const TimeLine: React.FC = () => {
                 </div>
               </div>
               <div className="relative col-span-12 space-y-6 px-0 sm:col-span-9 sm:px-4">
-                <div className="relative col-span-12 space-y-12 px-0 transition-all before:bg-gray-300 sm:col-span-8 sm:space-y-8 sm:px-4 sm:before:absolute sm:before:-left-3 sm:before:bottom-0 sm:before:top-2 sm:before:w-0.5">
+                <div className="relative col-span-12 space-y-12 px-0 transition-all before:bg-gray-700 sm:col-span-8 sm:space-y-8 sm:px-4 sm:before:absolute sm:before:-left-3 sm:before:bottom-0 sm:before:top-2 sm:before:w-0.5">
                   {educationData.map((edu) => (
                     <div
                       key={edu.id}
                       className={`flex flex-col rounded-lg border border-neutral-700/50 bg-neutral-800/50 p-4 transition-all duration-300 ${getColorClasses(
                         edu.color
-                      )} sm:relative sm:before:absolute sm:before:left-[-35px] sm:before:top-2 sm:before:z-[1] sm:before:h-4 sm:before:w-4 sm:before:rounded-full`}
+                      )} sm:relative sm:before:absolute sm:before:left-[-36px] sm:before:top-1 sm:before:z-[1] sm:before:h-4 sm:before:w-4 sm:before:rounded-full`}
                     >
                       <div className="flex items-start justify-between">
                         <div className="grow">
@@ -211,6 +211,33 @@ const TimeLine: React.FC = () => {
             </div>
           </div>
         </section>
+        <div className="absolute bottom-0 left-1/2 hidden -translate-x-1/2  animate-bounce md:flex">
+          <button
+            onClick={() => {
+              const footer = document.querySelector('#projects-section');
+              if (footer) {
+                footer.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="rounded-full border border-neutral-700/50 bg-neutral-800/50 p-2 transition-all duration-200 hover:border-emerald-700/50 hover:bg-neutral-700/50"
+            aria-label="Scroll to footer"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-neutral-400 hover:text-emerald-400"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M19 9l-7 7-7-7"
+              />
+            </svg>
+          </button>
+        </div>
       </Section>
     </div>
   );
