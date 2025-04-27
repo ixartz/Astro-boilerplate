@@ -49,7 +49,6 @@
   "dependencies": {
     "astro-boilerplate-components": "^1.0.16",
     "date-fns": "^2.30.0",
-    "husky": "^9.1.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.5.0"

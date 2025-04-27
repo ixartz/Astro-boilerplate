@@ -44,7 +44,7 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed inset-x-0  top-0 z-50 border-neutral-800 transition ease-in-out ${
+        className={`fixed inset-x-0  top-0 z-50 border-neutral-800 py-1.5 transition ease-in-out ${
           isScrolled
             ? 'border-b bg-neutral-900/95 backdrop-blur-md'
             : 'border-0'
@@ -55,7 +55,7 @@ const Navbar = () => {
             {/* Logo */}
             <a href="/" className="flex items-center">
               <CustomLogo
-                textColor="from-emerald-500 to-emerald-500 bg-gradient-to-r bg-clip-text text-transparent"
+                textColor="from-emerald-600 to-emerald-600 bg-gradient-to-r bg-clip-text text-transparent"
                 icon={
                   // <svg
                   //   className="mr-1.5 mt-1 h-8 w-8 fill-current text-emerald-500 transition-colors duration-200 hover:text-emerald-600"
@@ -66,7 +66,7 @@ const Navbar = () => {
                   //   <path d="M16.4 16.1c-.6.6-1.4 1-2.3 1.1-.9.1-1.8-.1-2.6-.6l-6.7-4.2c-.4-.3-.7-.6-.9-1-.3-.5-.4-1.1-.2-1.6.1-.6.5-1.1 1-1.4l6.8-4.2c.8-.5 1.7-.7 2.6-.6.9.1 1.7.5 2.3 1.1l.7.7-1.2 1.2-.7-.7c-.4-.4-.8-.6-1.3-.7-.5 0-1 .1-1.4.3L6.7 11c-.2.1-.3.3-.3.4v.2l6.7 4.2c.4.3.9.3 1.4.3.5 0 1-.3 1.3-.7l.7-.7 1.2 1.2-.7.7-.6-.5z" />
                   // </svg>
                   <img
-                    className="mr-2.5 h-6 w-6 rounded-full border border-emerald-700/75 bg-neutral-700/80 object-cover object-center opacity-100 ring-1 ring-neutral-700 transition duration-300 hover:ring-2"
+                    className="mr-3.5 h-9 w-9 rounded-full border border-emerald-700/75 bg-neutral-700/80 object-cover object-center opacity-100 ring-1 ring-neutral-700 transition duration-300 hover:ring-2"
                     src="/assets/images/portrait_nobg.png"
                     alt="Avatar image"
                     loading="lazy"
@@ -79,13 +79,14 @@ const Navbar = () => {
             {/* Contact Button */}
             <button
               onClick={toggleContactModal}
-              className="hidden items-center gap-2 rounded-lg border border-neutral-900 bg-emerald-600 px-4 py-2 text-white ring-0 ring-emerald-800 transition ease-in-out hover:bg-emerald-700 hover:ring-2 md:flex"
+              className="hidden items-center gap-2 rounded-lg border border-neutral-900 bg-emerald-600 px-4 py-2 text-base text-white ring-0 ring-emerald-800 transition ease-in-out hover:bg-emerald-700 hover:ring-2 md:flex"
             >
               <BiMessageDetail className="mt-0.5 text-xl" />
               <span>Contact Me</span>
             </button>
             <BiMessageDetail
               onClick={toggleContactModal}
+              style={{ textShadow: '2px 2px 4px #10b98199' }}
               className="flex text-2xl text-emerald-500 md:hidden"
             />
           </div>
