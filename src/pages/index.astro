@@ -1,27 +1,33 @@
 ---
-import type { IFrontmatter } from 'astro-boilerplate-components';
-
-import { CTA } from '@/partials/CTA';
+import { Footer } from '@/partials/Footer';
 import { Hero } from '@/partials/Hero';
+import { Navbar } from '@/partials/Navbar';
 import { ProjectList } from '@/partials/ProjectList';
 import { TimeLine } from '@/partials/TimeLine';
-import { RecentPosts } from '@/partials/RecentPosts';
 import Base from '@/templates/Base.astro';
 import { AppConfig } from '@/utils/AppConfig';
-import { sortByDate } from '@/utils/Posts';
-
-const allPosts = await Astro.glob<IFrontmatter>('./posts/*.md');
-const sortedPosts = sortByDate(allPosts);
-const lastThreePosts = sortedPosts.slice(0, 3);
-
-const { title } = AppConfig;
-const { description } = AppConfig;
 ---
 
-<Base head={{ title, description }}>
-  <Hero />
-  <ProjectList />
-  <TimeLine />
-  <RecentPosts postList={lastThreePosts} />
-  <CTA />
+<Base head={{ title: AppConfig.title, description: AppConfig.description }}>
+  <Navbar client:load />
+
+  <main class='bg-neutral-900'>
+    <Hero client:load />
+    <TimeLine client:load />
+    <ProjectList client:load />
+  </main>
+
+  <Footer />
 </Base>
+
+<script>
+  // Keep scroll behavior smooth
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('.min-h-screen');
+
+    // Add smooth scrolling to sections if needed
+    sections.forEach((section) => {
+      // You can add any additional scroll behavior here if needed
+    });
+  });
+</script>

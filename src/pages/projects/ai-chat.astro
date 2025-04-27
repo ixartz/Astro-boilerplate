@@ -1,0 +1,50 @@
+---
+import ProjectDetail from '@/templates/ProjectDetail.astro';
+
+const projectData = {
+  name: "AI Chat Assistant",
+  description: "An intelligent chat assistant powered by machine learning that can understand context and provide relevant responses.",
+  fullDescription: `The AI Chat Assistant is a sophisticated conversational AI system that leverages natural language processing to provide human-like interactions. Built with modern machine learning frameworks, it can understand context, maintain conversation history, and provide helpful responses across various domains.
+
+The system uses advanced transformer models to process user input and generate appropriate responses, while maintaining conversation context and learning from interactions to improve over time.`,
+  link: "/",
+  repoLink: "https://github.com/yourusername/ai-chat",
+  img: {
+    src: "/assets/images/practice.gif",
+    alt: "AI Chat Assistant Interface"
+  },
+  images: [
+    {
+      src: "/assets/images/browse.gif",
+      alt: "Chat conversation view"
+    },
+    {
+      src: "/assets/images/piano.gif",
+      alt: "Settings and configuration panel"
+    }
+  ],
+  technologies: ["Python", "TensorFlow", "React", "FastAPI", "Docker", "Redis"],
+  features: [
+    "Natural language understanding with context awareness",
+    "Multi-turn conversation capabilities",
+    "Sentiment analysis for personalized responses",
+    "Integration with external APIs for real-time information",
+    "User authentication and conversation history",
+    "Customizable personality and response styles"
+  ],
+  challenges: [
+    "Training models to understand nuanced human communication",
+    "Implementing efficient caching for fast response times",
+    "Handling edge cases in natural language processing",
+    "Managing conversation state across multiple sessions"
+  ],
+  lessons: [
+    "The importance of data quality in training machine learning models",
+    "Strategies for scaling real-time AI applications",
+    "Techniques for evaluating conversational AI performance",
+    "Best practices for deploying machine learning models in production"
+  ]
+};
+---
+
+<ProjectDetail project={projectData} />

@@ -1,0 +1,209 @@
+---
+import { Footer } from '@/partials/Footer';
+import { Navbar } from '@/partials/Navbar';
+import Base from '@/templates/Base.astro';
+import { AppConfig } from '@/utils/AppConfig';
+import { FaGithub, FaExternalLinkAlt, FaArrowLeft } from 'react-icons/fa';
+
+export interface Props {
+  project: {
+    name: string;
+    description: string;
+    fullDescription?: string;
+    link: string;
+    repoLink?: string;
+    img: {
+      src: string;
+      alt: string;
+    };
+    images?: {
+      src: string;
+      alt: string;
+    }[];
+    technologies: string[];
+    features?: string[];
+    challenges?: string[];
+    lessons?: string[];
+  };
+}
+
+const { project } = Astro.props;
+---
+
+<Base head={{ title: `${project.name} - ${AppConfig.site_name}`, description: project.description }}>
+  <Navbar client:load />
+
+  <main class="bg-neutral-900 min-h-screen pt-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Back Button -->
+      <a 
+        href="/#projects-section" 
+        class="inline-flex items-center text-emerald-400 hover:text-emerald-300 mb-8 transition-colors duration-200"
+      >
+        <FaArrowLeft className="mr-2" />
+        Back to Projects
+      </a>
+
+      <!-- Project Header -->
+      <div class="mb-12">
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">{project.name}</h1>
+        <p class="text-xl text-gray-300 mb-6">{project.description}</p>
+        
+        <div class="flex space-x-4">
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors duration-200"
+          >
+            <FaExternalLinkAlt className="mr-2" />
+            Live Demo
+          </a>
+          {project.repoLink && (
+            <a
+              href={project.repoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center px-6 py-3 bg-neutral-800 hover:bg-neutral-700 text-white rounded-lg border border-neutral-700 transition-colors duration-200"
+            >
+              <FaGithub className="mr-2" />
+              View Code
+            </a>
+          )}
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Left Column - Project Details -->
+        <div class="lg:col-span-2 space-y-12">
+          <!-- Hero Image -->
+          <div class="rounded-xl overflow-hidden border border-neutral-700">
+            <img 
+              src={project.img.src} 
+              alt={project.img.alt}
+              class="w-full h-auto"
+            />
+          </div>
+
+          <!-- Full Description -->
+          {project.fullDescription && (
+            <div class="prose prose-invert prose-emerald max-w-none">
+              <h2 class="text-2xl font-bold text-white mb-4">About the Project</h2>
+              <p class="text-gray-300 whitespace-pre-line">{project.fullDescription}</p>
+            </div>
+          )}
+
+          <!-- Features -->
+          {project.features && project.features.length > 0 && (
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-4">Key Features</h2>
+              <ul class="space-y-3">
+                {project.features.map((feature) => (
+                  <li class="flex items-start">
+                    <span class="text-emerald-400 mr-2">•</span>
+                    <span class="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <!-- Additional Images -->
+          {project.images && project.images.length > 0 && (
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-4">Screenshots</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {project.images.map((image) => (
+                  <div class="rounded-lg overflow-hidden border border-neutral-700">
+                    <img 
+                      src={image.src} 
+                      alt={image.alt}
+                      class="w-full h-auto"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Challenges & Solutions -->
+          {project.challenges && project.challenges.length > 0 && (
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-4">Challenges & Solutions</h2>
+              <ul class="space-y-3">
+                {project.challenges.map((challenge) => (
+                  <li class="flex items-start">
+                    <span class="text-emerald-400 mr-2">•</span>
+                    <span class="text-gray-300">{challenge}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <!-- Lessons Learned -->
+          {project.lessons && project.lessons.length > 0 && (
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-4">Lessons Learned</h2>
+              <ul class="space-y-3">
+                {project.lessons.map((lesson) => (
+                  <li class="flex items-start">
+                    <span class="text-emerald-400 mr-2">•</span>
+                    <span class="text-gray-300">{lesson}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        <!-- Right Column - Project Info -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-24 space-y-8">
+            <!-- Technologies -->
+            <div class="bg-neutral-800/50 rounded-xl p-6 border border-neutral-700">
+              <h3 class="text-xl font-bold text-white mb-4">Technologies Used</h3>
+              <div class="flex flex-wrap gap-2">
+                {project.technologies.map((tech) => (
+                  <span class="px-3 py-1 bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-full text-sm">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <!-- Project Links -->
+            <div class="bg-neutral-800/50 rounded-xl p-6 border border-neutral-700">
+              <h3 class="text-xl font-bold text-white mb-4">Project Links</h3>
+              <div class="space-y-3">
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center text-gray-300 hover:text-emerald-400 transition-colors duration-200"
+                >
+                  <FaExternalLinkAlt className="mr-2" />
+                  Live Demo
+                </a>
+                {project.repoLink && (
+                  <a
+                    href={project.repoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center text-gray-300 hover:text-emerald-400 transition-colors duration-200"
+                  >
+                    <FaGithub className="mr-2" />
+                    Source Code
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Base>

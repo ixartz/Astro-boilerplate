@@ -1,0 +1,50 @@
+---
+import ProjectDetail from '@/templates/ProjectDetail.astro';
+
+const projectData = {
+  name: "E-Commerce Platform",
+  description: "A full-stack e-commerce solution with real-time inventory management, payment processing, and advanced analytics dashboard.",
+  fullDescription: `This comprehensive e-commerce platform was built to provide small to medium-sized businesses with a powerful online selling solution. The platform handles everything from product management to order fulfillment, with a focus on user experience and administrative efficiency.
+
+Key highlights include real-time inventory tracking, integrated payment processing through Stripe, and a detailed analytics dashboard that provides insights into sales patterns and customer behavior.`,
+  link: "/",
+  repoLink: "https://github.com/yourusername/ecommerce",
+  img: {
+    src: "/assets/images/piano.gif",
+    alt: "E-Commerce Platform Dashboard"
+  },
+  images: [
+    {
+      src: "/assets/images/browse.gif",
+      alt: "Product catalog view"
+    },
+    {
+      src: "/assets/images/practice.gif",
+      alt: "Admin dashboard"
+    }
+  ],
+  technologies: ["Next.js", "Stripe", "JavaScript", "PostgreSQL", "Redux", "Tailwind CSS"],
+  features: [
+    "Real-time inventory management system",
+    "Secure payment processing with Stripe integration",
+    "Advanced search and filtering capabilities",
+    "Automated email notifications for orders",
+    "Responsive design for mobile shopping",
+    "Admin dashboard with sales analytics"
+  ],
+  challenges: [
+    "Implementing secure payment processing while maintaining PCI compliance",
+    "Creating a scalable architecture for handling high traffic during sales",
+    "Optimizing database queries for complex product filtering",
+    "Building a flexible product variant system for different sizes and colors"
+  ],
+  lessons: [
+    "Importance of proper data validation and security in e-commerce applications",
+    "Strategies for optimizing database performance at scale",
+    "Best practices for handling financial transactions in web applications",
+    "How to create intuitive user interfaces for complex product catalogs"
+  ]
+};
+---
+
+<ProjectDetail project={projectData} />

@@ -1,0 +1,230 @@
+---
+import { Footer } from '@/partials/Footer';
+import { Navbar } from '@/partials/Navbar';
+import Base from '@/templates/Base.astro';
+import { AppConfig } from '@/utils/AppConfig';
+import { FaGithub, FaExternalLinkAlt, FaArrowLeft } from 'react-icons/fa';
+
+const projectData = {
+  name: "Funkey",
+  description: "Learn Typing having the most fun. Explore features like lyrics typing, piano typing and practice typing with AI generated contents that sound familiar.",
+  fullDescription: `Funkey is an innovative typing practice platform that makes learning to type both fun and effective. Instead of traditional typing exercises, Funkey uses real song lyrics, piano-style typing interfaces, and AI-generated content to create an engaging learning experience.
+
+The platform was developed with modern web technologies to ensure a smooth, responsive experience across all devices. Whether you're a beginner learning to type or an experienced typist looking to improve your speed, Funkey offers something for everyone.`,
+  link: "/",
+  repoLink: "https://github.com/yourusername/funkey",
+  img: {
+    src: "/assets/images/browse.gif",
+    alt: "Funkey typing interface"
+  },
+  images: [
+    {
+      src: "/assets/images/practice.gif",
+      alt: "Practice mode interface"
+    },
+    {
+      src: "/assets/images/piano.gif",
+      alt: "Piano typing mode"
+    }
+  ],
+  technologies: ["Bootstrap", "MongoDB", "Express", "TypeScript", "Node.js", "React"],
+  features: [
+    "Lyrics-based typing practice using popular songs",
+    "Piano-style keyboard interface for musical typing experience",
+    "AI-generated content that adapts to your skill level",
+    "Real-time performance tracking and statistics",
+    "Customizable practice sessions",
+    "Gamification elements to keep learning fun"
+  ],
+  challenges: [
+    "Creating a smooth, responsive typing interface that works across all devices",
+    "Implementing real-time synchronization with song lyrics",
+    "Developing an AI system that generates contextually appropriate practice content",
+    "Optimizing performance for handling rapid keystrokes and updates"
+  ],
+  lessons: [
+    "Importance of user experience in educational applications",
+    "How to effectively combine entertainment with learning",
+    "Techniques for real-time data processing in web applications",
+    "Best practices for implementing gamification in educational tools"
+  ]
+};
+---
+
+<Base head={{ title: `${projectData.name} - ${AppConfig.site_name}`, description: projectData.description }}>
+  <Navbar client:load />
+
+  <main class="bg-neutral-900 min-h-screen pt-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <!-- Back Button -->
+      <a 
+        href="/#projects-section" 
+        class="inline-flex items-center text-emerald-400 hover:text-emerald-300 mb-8 transition-colors duration-200"
+      >
+        <FaArrowLeft className="mr-2" />
+        Back to Projects
+      </a>
+
+      <!-- Project Header -->
+      <div class="mb-12">
+        <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">{projectData.name}</h1>
+        <p class="text-xl text-gray-300 mb-6">{projectData.description}</p>
+        
+        <div class="flex space-x-4">
+          <a
+            href={projectData.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors duration-200"
+          >
+            <FaExternalLinkAlt className="mr-2" />
+            Live Demo
+          </a>
+          {projectData.repoLink && (
+            <a
+              href={projectData.repoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center px-6 py-3 bg-neutral-800 hover:bg-neutral-700 text-white rounded-lg border border-neutral-700 transition-colors duration-200"
+            >
+              <FaGithub className="mr-2" />
+              View Code
+            </a>
+          )}
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+        <!-- Left Column - Project Details -->
+        <div class="lg:col-span-2 space-y-12">
+          <!-- Hero Image -->
+          <div class="rounded-xl overflow-hidden border border-neutral-700">
+            <img 
+              src={projectData.img.src} 
+              alt={projectData.img.alt}
+              class="w-full h-auto"
+            />
+          </div>
+
+          <!-- Full Description -->
+          {projectData.fullDescription && (
+            <div class="prose prose-invert prose-emerald max-w-none">
+              <h2 class="text-2xl font-bold text-white mb-4">About the Project</h2>
+              <p class="text-gray-300 whitespace-pre-line">{projectData.fullDescription}</p>
+            </div>
+          )}
+
+          <!-- Features -->
+          {projectData.features && projectData.features.length > 0 && (
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-4">Key Features</h2>
+              <ul class="space-y-3">
+                {projectData.features.map((feature) => (
+                  <li class="flex items-start">
+                    <span class="text-emerald-400 mr-2">•</span>
+                    <span class="text-gray-300">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <!-- Additional Images -->
+          {projectData.images && projectData.images.length > 0 && (
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-4">Screenshots</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {projectData.images.map((image) => (
+                  <div class="rounded-lg overflow-hidden border border-neutral-700">
+                    <img 
+                      src={image.src} 
+                      alt={image.alt}
+                      class="w-full h-auto"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- Challenges & Solutions -->
+          {projectData.challenges && projectData.challenges.length > 0 && (
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-4">Challenges & Solutions</h2>
+              <ul class="space-y-3">
+                {projectData.challenges.map((challenge) => (
+                  <li class="flex items-start">
+                    <span class="text-emerald-400 mr-2">•</span>
+                    <span class="text-gray-300">{challenge}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          <!-- Lessons Learned -->
+          {projectData.lessons && projectData.lessons.length > 0 && (
+            <div>
+              <h2 class="text-2xl font-bold text-white mb-4">Lessons Learned</h2>
+              <ul class="space-y-3">
+                {projectData.lessons.map((lesson) => (
+                  <li class="flex items-start">
+                    <span class="text-emerald-400 mr-2">•</span>
+                    <span class="text-gray-300">{lesson}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        <!-- Right Column - Project Info -->
+        <div class="lg:col-span-1">
+          <div class="sticky top-24 space-y-8">
+            <!-- Technologies -->
+            <div class="bg-neutral-800/50 rounded-xl p-6 border border-neutral-700">
+              <h3 class="text-xl font-bold text-white mb-4">Technologies Used</h3>
+              <div class="flex flex-wrap gap-2">
+                {projectData.technologies.map((tech) => (
+                  <span class="px-3 py-1 bg-emerald-500/10 text-emerald-300 border border-emerald-500/20 rounded-full text-sm">
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <!-- Project Links -->
+            <div class="bg-neutral-800/50 rounded-xl p-6 border border-neutral-700">
+              <h3 class="text-xl font-bold text-white mb-4">Project Links</h3>
+              <div class="space-y-3">
+                <a
+                  href={projectData.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center text-gray-300 hover:text-emerald-400 transition-colors duration-200"
+                >
+                  <FaExternalLinkAlt className="mr-2" />
+                  Live Demo
+                </a>
+                {projectData.repoLink && (
+                  <a
+                    href={projectData.repoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex items-center text-gray-300 hover:text-emerald-400 transition-colors duration-200"
+                  >
+                    <FaGithub className="mr-2" />
+                    Source Code
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Base>

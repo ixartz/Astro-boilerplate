@@ -1,6 +1,4 @@
 ---
-import { Footer } from '@/partials/Footer';
-import { Navbar } from '@/partials/Navbar';
 import { AppConfig } from '@/utils/AppConfig';
 
 export interface Props {
@@ -15,7 +13,7 @@ const {
 } = Astro.props as Props;
 ---
 
-<html lang='en'>
+<html lang='en' class='dark-mode'>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
@@ -24,28 +22,168 @@ const {
     <meta name='author' content={AppConfig.author} />
 
     <link rel='alternate' type='application/rss+xml' href='/rss.xml' />
-    <link rel='icon' type='image/x-icon' href='/favicon.ico' />
-    <link
-      rel='stylesheet'
-      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css'
-      integrity='sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=='
-      crossorigin='anonymous'
-      referrerpolicy='no-referrer'
+    <!-- <link rel='icon' type='image/x-icon' href='/favicon.ico' /> -->
+    <link rel='icon' type='image/png' href='/assets/images/portrait_square.png'
     />
 
-		<style>
-      .description {
-				color: red !important;
-        -webkit-line-clamp: initial;
+    <!-- Font -->
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'
+      rel='stylesheet'
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel='stylesheet'
+      href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'
+    />
+  </head>
+  <body>
+    <div class='min-h-screen antialiased'>
+      <slot></slot>
+    </div>
+
+    <style is:global>
+      /* Base styles */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        overflow-x: hidden;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      /* Dark mode styles */
+      html.dark-mode {
+        --bg-color: #0f172a;
+        --text-color: #f8fafc;
+        --bg-secondary: #1e293b;
+        --accent-color: #06b6d4;
+      }
+
+      /* Light mode styles */
+      html.light-mode {
+        --bg-color: #f8fafc;
+        --text-color: #0f172a;
+        --bg-secondary: #e2e8f0;
+        --accent-color: #0891b2;
+      }
+
+      /* Apply theme colors dynamically */
+      html.dark-mode body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+
+      html.light-mode body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+
+      /* Update all component backgrounds */
+      html.light-mode .bg-neutral-900 {
+        background-color: var(--bg-color) !important;
+      }
+
+      html.light-mode .bg-neutral-800\/50 {
+        background-color: rgba(226, 232, 240, 0.5) !important;
+      }
+
+      html.light-mode .border-neutral-700\/50 {
+        border-color: rgba(203, 213, 225, 0.5) !important;
+      }
+
+      html.light-mode .text-gray-300 {
+        color: #475569 !important;
+      }
+
+      html.light-mode .text-neutral-300 {
+        color: #475569 !important;
+      }
+
+      html.light-mode .text-white {
+        color: var(--text-color) !important;
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg-secondary);
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--accent-color);
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #06b6d4;
+      }
+
+      /* Transitions for all interactive elements */
+      a,
+      button,
+      input,
+      textarea,
+      .transition-all {
+        transition: all 0.2s ease-in-out;
+      }
+
+      /* Section scroll behavior - enables full-height sections */
+      .min-h-screen {
+        min-height: 100vh;
+        position: relative;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .animate-fadeIn {
+        animation: fadeIn 0.3s ease-out;
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+
+      .animate-bounce {
+        animation: bounce 2s infinite;
+      }
+
+      /* Additional utility classes */
+      .shadow-glow {
+        box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+      }
+
+      .backdrop-blur {
+        backdrop-filter: blur(8px);
       }
     </style>
-
-	</head>
-  <body class='bg-slate-950 text-gray-100'>
-    <Navbar />
-
-    <slot></slot>
-
-    <Footer />
   </body>
 </html>
