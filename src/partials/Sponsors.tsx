@@ -1,4 +1,4 @@
-import { Section } from 'astro-boilerplate-components';
+import { Section } from '@/components/Section';
 
 import arcjetLogo from '../../public/assets/images/arcjet-dark.svg';
 import clerkLogo from '../../public/assets/images/clerk-logo-white.png';

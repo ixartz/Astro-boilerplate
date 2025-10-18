@@ -1,13 +1,12 @@
 ---
-import type { IFrontmatter } from 'astro-boilerplate-components';
-
 import { BlogPost } from '@/partials/BlogPost';
 import { CTA } from '@/partials/CTA';
 import Base from '@/templates/Base.astro';
+import type { IFrontMatter } from '@/types/IFrontMatter';
 import { AppConfig } from '@/utils/AppConfig';
 
 export interface Props {
-  content: IFrontmatter;
+  content: IFrontMatter;
 }
 
 const { content } = Astro.props as Props;
